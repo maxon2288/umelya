@@ -1,0 +1,286 @@
+// GUI styles by Maxim Sinukov
+// For example, styles of the links, buttons and so on.
+
+.m-title {
+    line-height: normal;
+    font-size: 40px;
+    color: #1963AE;
+}
+.m-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #434343;
+}
+
+.m-bg-cont {
+    // background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    img {
+        display: none;
+    }
+}
+
+
+
+
+.html {
+    h1,h2 {
+        @extend .m-title-2;
+        margin-bottom: 20px;
+    }
+    h3 {
+        @extend .m-title-3;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        color: $text;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+}
+.m-title-3 {
+    color: $blue;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.m-button-2 {
+    border: 2px solid $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    min-width: 205px;
+    height: 50px;
+    border-radius: 50px;    
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    color: #1963AE;
+    box-shadow: 0px 4px 7px rgba(25, 99, 174, 0.15);
+    background-color: transparent;
+    transition: 0.3s;   
+    &:hover {
+        background-color: $blue;
+        color: white;
+    }
+    &.active {
+        background-color: $blue;
+        color: white;
+    }
+
+}
+
+.m-button {
+    font-size: 14px;
+    line-height: normal;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    height: 50px;
+    align-items: center;
+    white-space: nowrap;
+    background: #FE6313;
+    box-shadow: 0px 4px 7px rgba(25, 99, 174, 0.15);
+    border-radius: 25px;
+    display: flex;
+    flex-grow: 0;
+    padding-right: 58px;
+    transition: 0.3s;
+    position: relative;
+    justify-content: center;
+    border: none;
+    &__icon {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background: #DA5815;
+        border-radius: 100px;
+        right: 5px;
+        svg {
+            fill: white;
+        }
+    }
+    &.reverse {
+        padding-left: 58px;
+        padding-right: 30px;
+        justify-content: center;
+        .m-button__icon {
+            right: calc(100% - 45px);
+        }
+    }
+    &:hover {
+        background-color: #e45711;
+    }
+    &:active {
+        background-color: #d15010;
+    }
+}
+
+.m-title-2 {
+    font-size: 36px;
+    line-height: normal;
+    color: #1963AE;
+    font-weight: bold;
+    span {
+        color: $orange;
+    }
+}
+
+
+.m-field {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 7px rgba(25, 99, 174, 0.15);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 26px;
+    height: 50px;
+    border: 2px solid #fff;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: normal;
+    color: #B2C2CD;
+    @media screen and (max-width: 600px) {
+        padding: 6px 20px;
+        height: 40px !important;
+    }
+    &.error {
+        border-color: #db3b3b !important;
+    }
+    &.valid {
+        border-color: #68a852 !important;
+    }
+    &-angle {
+        @extend .m-field;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    &__container {
+        position: relative;
+        .m-placeholder {
+            transition: 0.3s;
+            font-size: 14px;
+            line-height: normal;
+            color: #B2C2CD;
+            font-size: 12px;
+            position: absolute;
+            top: 50%;
+            transition: 0.3s;
+            transform: translateY(-50%);
+            left: 26px;
+        }
+    }
+    
+    &.required {
+        ~ .m-placeholder:after {
+            content: ' *';
+            color: $orange;
+        }
+    }
+    &:disabled{
+        opacity: 0.6;
+        user-select: none;
+    }
+    &:focus ~ .m-placeholder {
+        opacity: 0;
+    }
+    &.m-textarea {
+        padding: 0;
+        padding-left: 27px;
+        padding-top: 13px;
+        border-radius: 26px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        vertical-align: top;
+        height: 110px !important;
+    }
+}
+
+.mr0 {
+    margin-right: 0 !important; 
+}
+
+.mt10 {
+    margin-top: 10px !important; 
+}
+
+.mt20 {
+    margin-top: 20px !important; 
+}
+
+.mt30 {
+    margin-top: 30px !important; 
+}
+
+.mt15 {
+    margin-top: 15px !important; 
+}
+
+.mt25{
+    margin-top: 25px !important; 
+}
+
+.mb10{
+    margin-bottom: 10px !important; 
+}
+
+.mb20 {
+    margin-bottom: 20px !important; 
+}
+
+.mb30 {
+    margin-bottom: 30px !important; 
+}
+
+.ml10{
+    margin-left: 10px !important;
+}
+
+.ml20{
+    margin-left: 20px !important;
+}
+
+.ml30{
+    margin-left: 30px !important;
+}
+
+.mb70 {
+    margin-bottom: 70px !important;
+}
+
+.mr10{
+    margin-right: 10px !important;
+}
+.mr15{
+    margin-right: 15px !important;
+}
+
+.mr20{
+    margin-right: 20px !important;
+}
+
+.mr30{
+    margin-right: 30px !important;
+}
+
+.mb85 {
+    margin-bottom: 85px !important;
+}
+
+.mt85 {
+    margin-top: 85px !important;
+}
+
+.m-desc {
+    font-size: 16px;
+    line-height: normal;
+    color: #688AAB;
+    font-weight: 400;
+
+}
