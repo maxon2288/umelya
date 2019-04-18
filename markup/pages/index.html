@@ -3,85 +3,12 @@
 <head>
     {{> head/head head.defaults}}
     <!-- Put this script tag to the <head> of your page -->
-        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
-
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 </head>
 <body class="page" style="visibility: hidden;opacity: 0;">
     %=symbols=%
 
-    <div class="header">
-        <div class="wrapper">
-            <div class="header__container">
-                <div class="header__logo">
-                    <a href="#">
-                        <img src="%=static=%img/content/logo.png" alt="">
-                    </a>
-                </div>
-                <div class="header__catalog">
-                    {{Icon iconName="catalog" className="header__catalog-icon"}}
-                    <span>Каталог</span>
-                    <div class="header__sub">
-                        <a href="#">
-                            <div class="header__sub-svg">
-                                {{Icon iconName="lupa"}}
-                            </div>
-                            ghbdtn
-                        </a>
-                        <a href="#">
-                            <div class="header__sub-svg">
-                                {{Icon iconName="lupa"}}
-                            </div>
-                            ghbdtn
-                        </a>
-                        <a href="#">
-                            <div class="header__sub-svg">
-                                {{Icon iconName="lupa"}}
-                            </div>
-                            ghbdtn
-                        </a>
-                        <a href="#">
-                            <div class="header__sub-svg">
-                                {{Icon iconName="lupa"}}
-                            </div>
-                            ghbdtn
-                        </a>
-                        <a href="#">
-                            <div class="header__sub-svg">
-                                {{Icon iconName="lupa"}}
-                            </div>
-                            ghbdtn
-                        </a>
-                    </div>
-                </div>
-                <div class="header__menu">
-                    <a href="#">О нас</a>
-                    <a href="#">Покупателям</a>
-                    <a href="#">Контакты</a>
-                </div>
-
-                <a href="#" class="header__phone">
-                    <div class="header__phone-button">
-                        {{Icon iconName="phone"}}
-                    </div>
-                    <span>+7 795 445 46 45</span>
-                </a>
-                <div class="header__features">
-                    <a href="#" class="header__item header-search">
-                        {{Icon iconName="lupa"}}
-                    </a>
-                    <a href="#" class="header__item header-search">
-                        {{Icon iconName="user"}}
-                    </a>
-                    <a href="#" class="header__item header-search">
-                        {{Icon iconName="like"}}
-                    </a>
-                    <a href="#" class="header__item header-search">
-                        {{Icon iconName="basket"}}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{> header/header}}
 
     <div class="first mb70">
         <div class="wrapper">
@@ -902,6 +829,63 @@
         </div>
     </div>
 
+    <div class="reviews mb85">
+        <div class="wrapper">
+            <div class="reviews__container">
+                <div class="reviews__top mb30">
+                    <div class="m-title-2">
+                            Отзывы о нашей компании
+                    </div>
+                </div>
+
+                <div class="reviews__content">
+                    <div class="reviews__left">
+                        <img src="%=static=%img/content/reviews.jpg" alt="">
+                    </div>
+                    <div class="reviews__right">
+                        <div class="slider-button slider-button__prev sert-slider-prev">
+                            {{Icon iconName="arrow"}}
+                        </div>
+                        <div class="reviews__slider">
+                            <div class="swiper-container reviews-slider">
+                                <div class="swiper-wrapper lightgallery">
+                                    <a class="swiper-slide reviews__slide" href="%=static=%img/content/sert.jpg">
+                                        <div class="reviews__img m-bg-cont">
+                                            <img src="%=static=%img/content/sert.jpg" alt="">
+                                        </div>
+                                        <div class="reviews__button">
+                                            {{Icon iconName="zoom"}}
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide reviews__slide" href="%=static=%img/content/sert.jpg">
+                                        <div class="reviews__img m-bg-cont">
+                                            <img src="%=static=%img/content/sert.jpg" alt="">
+                                        </div>
+                                        <div class="reviews__button">
+                                            {{Icon iconName="zoom"}}
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide reviews__slide" href="%=static=%img/content/sert.jpg">
+                                        <div class="reviews__img m-bg-cont">
+                                            <img src="%=static=%img/content/sert.jpg" alt="">
+                                        </div>
+                                        <div class="reviews__button">
+                                            {{Icon iconName="zoom"}}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-button slider-button__next sert-slider-next">
+                            {{Icon iconName="arrow"}}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
     <div class="news-slider mb85">
         <div class="wrapper">
             <div class="news-slider__container">
@@ -1006,91 +990,7 @@
         </div>
     </div>
 
-    <div class="map">
-        <div class="wrapper">
-            <div class="map__container">
-                <div class="map__left">
-                    <div class="ymap" id="ya" data-x="55.234774" data-y="61.437345"></div>
-                    <div class="map__info-container">
-                        <div class="map__info">
-                            <div class="map__item">
-                                г. Сантк-Петербург, ул. Зои Космодемьянской, д.10 <br>
-                                <span>(вход со двора, на домофоне код-1)</span>
-                            </div>
-                            <div class="map__item">
-                                Часы работы: с 9:00 - 18:00 <br>
-                                <span>(по будням)</span>
-                            </div>
-                            <a href="tel:+86954563423" class="map__phone">+8 695 456 34 23</a>
-                            <a href="mailto:info@umelya.ru" class="map__mail">info@umelya.ru</a>
-                            <div class="map__social">
-                                <a href="#">
-                                    {{Icon iconName="vk"}}
-                                    {{Icon iconName="fb"}}
-                                    {{Icon iconName="inst"}}
-                                    {{Icon iconName="youtube"}}
-                                    {{Icon iconName="ok"}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="map__right">
-                    <div class="map__right-item">
-                        <a href="#">Новинки</a>
-                        <a href="#">Распродажа</a>
-                        <a href="#">Новый год 2018</a>
-                        <a href="#">Наборы для творчества</a>
-                    </div>
-                    <div class="map__right-item">
-                        <a href="#">Деревянные конструкторы</a>
-                        <a href="#">Заготовки из дерева</a>
-                        <a href="#">Заготовки из керамики</a>
-                        <a href="#">Акриловые краски</a>
-                    </div>
-                    <div class="map__right-item">
-                        <a href="#">Фурнитура для шкатулок</a>
-                        <a href="#">Часовые механизмы</a>
-                        <a href="#">Изделия мастеров</a>
-                        <a href="#">Изделия на заказ</a>
-                    </div>
-                    <div class="map__right-item">
-                        <span>О нас</span>
-                        <a href="#">О компании</a>
-                        <a href="#">Новости и акции</a>
-                        <a href="#">Отзывы и предложения</a>
-                        <a href="#">Наши услуги</a>
-                        <a href="#">Блог</a>
-                    </div>
-                    <div class="map__right-item">
-                        <span>Покупателям</span>
-                        <a href="#">Как оформить заказ</a>
-                        <a href="#">Оплата и доставка</a>
-                        <a href="#">Гарантия на товар</a>
-                        <a href="#">Обмен и возврат</a>
-                        <a href="#">Оптовый прайс-лист</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="wrapper">
-            <div class="footer__container">
-                <div class="footer__left">
-                        OOO “Специальные краски”, Все права защищены
-                </div>
-                <div class="footer__markello">
-                    Создание сайта- <a href="№">Markello</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    {{> popup/popup}}
-    {{> scripts/scripts}}
+    {{> footer/footer}}
     
 </body>
 </html>

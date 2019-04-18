@@ -1,0 +1,149 @@
+<!doctype html>
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="top">
+        <div class="wrapper">
+            <div class="top__container">
+                {{> bread/bread}}
+                <div class="m-title-2">Корзина</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="basket">
+        <div class="wrapper">
+            <div class="basket__container">
+                <div class="basket__top">
+                    <div class="basket__buttons">
+                        <a href="basket-1.html" class="m-button-2"> {{Icon iconName="basket"}} ТОВАРЫ</a>
+                        <a href="basket-2.html" class="m-button-2"> {{Icon iconName="user"}} ВАШИ ДАННЫЕ</a>
+                        <a href="basket-3.html" class="m-button-2 active"> {{Icon iconName="walet"}} ОПЛАТА</a>
+                        <a href="basket-4.html" class="m-button-2"> {{Icon iconName="deliv"}} ДОСТАВКА</a>
+                    </div>
+                </div>
+                
+                <div class="basket__tab-container">
+                    
+                    <div class="basket__table-content">
+                        <div class="checkout__container mb50">
+                            <div class="checkout-ch">
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                            Оплата заказа непосредственно в офисе компании, при получении заказа
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                            Распространяется только на товар из наличия.
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Оплата заказа курьеру, при получении заказа <span>(только по Санкт-Петербургу)</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                            Оплата от юридического лица по счету
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Вы присылаете свои реквизиты на нашу почту <a href="mailto:info@umelya.ru" class="blue">info@umelya.ru</a> и мы выписываем счет на оплату. <a href="#" class="orange">Прикрепить реквизиты</a>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Оплата от физического лица на карту Сбербанка
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                В ответ на Вашу заявку мы направляем Вам бланк заказа, где Вы вносите свои данные необходимые в дальнейшем для отправки заказа, а также направляем Вам данные по переводу на карту Сбербанка                                            
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Оплата через Яндекс.Кассу
+
+
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Вы можете оплатить свой заказ банковской картой (Visa, MasterCard, Maestro), электронными деньгами (Яндекс.Деньги, WebMoney, Qiwi), с баланса телефона (Билайн, Мегафон, МТС).
+                                            </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkout-nav">
+                            <div class="wrapper">
+                                <a href="#" class="checkout-nav-button checkout-nav-prev">{{Icon iconName="arrow-left"}}Назад</a>
+                                <a href="#" class="checkout-nav-button checkout-nav-next">Вперед{{Icon iconName="arrow-left"}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket__slider">
+                        <div class="basket__slider-img">
+                            <img src="%=static=%img/content/basket-slider.png" alt="">
+                        </div>
+                        <div class="swiper-container basket-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer/footer}}
+    
+</body>
+</html>

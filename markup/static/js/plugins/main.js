@@ -56,6 +56,35 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: '.prod-next',
 			prevEl: '.prod-prev',
+		},	
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+	});
+
+	//tabs------------
+	$(".tabs__container").each(function() {
+		$('.tabs__tab').click(function(e) {
+			e.preventDefault();
+			var it = $(this);
+			var href = it.attr("href");
+			it.closest(".tabs__tabs").find(".tabs__tab").removeClass("active");
+			it.addClass("active");
+			$(".tabs__block").removeClass("active");
+			it.closest(".tabs__container").find("." + href).addClass('active');
+			it.closest('.tabs__container').find("." + href + " input").val('');
+			it.closest('.tabs__container').find("." + href + " input").removeClass("is-focus");
+		});
+	});
+	$(".lightgallery").lightGallery(); 
+	var swiper = new Swiper('.reviews-slider', {
+		speed: 400,
+		slidesPerView: 2,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.sert-slider-next',
+			prevEl: '.sert-slider-prev',
 		},
 		pagination: {
 			el: '.swiper-pagination',
@@ -76,6 +105,19 @@ $(document).ready(function () {
 		},
 	});
 	var swiper = new Swiper('.reason-slider', {
+		speed: 400,
+		slidesPerView: 1,
+		spaceBetween: 43,
+		navigation: {
+			nextEl: '.reason-next',
+			prevEl: '.reason-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+	});
+	var swiper = new Swiper('.basket-slider', {
 		speed: 400,
 		slidesPerView: 1,
 		spaceBetween: 43,
@@ -128,23 +170,28 @@ $(document).ready(function () {
 		$(this).css("background-image", "url(" + img + ")");
 	});
 
-	 $(document).on('click', '.number-input-container .number-increment', function(e) {
-        let $input = $(this).siblings('.number-input'),
-            val = parseInt($input.val()),
-            max = parseInt($input.attr('max')),
-            step = parseInt($input.attr('step'));
-		let temp = val + step;
-		$input.val(temp <= max ? temp : max);
-		$(".number-result").text($input.val());
-    });
-    $(document).on('click', '.number-input-container .number-decrement', function(e) {
-        let $input = $(this).siblings('.number-input'),
-            val = parseInt($input.val()),
-            min = parseInt($input.attr('min')),
-            step = parseInt($input.attr('step'));
-		let temp = val - step;
-		$input.val(temp >= min ? temp : min);
-		$(".number-result").text($input.val());
-    });
+	$('.number-input-container').each(function() {
+		var it = $(this);
+		it.find(".number-increment").click(function(e) {
+		   let $input = $(this).siblings('.number-input'),
+			   val = parseInt($input.val()),
+			   max = parseInt($input.attr('max')),
+			   step = parseInt($input.attr('step'));
+		   let temp = val + step;
+		   $input.val(temp <= max ? temp : max);
+		   it.find(".number-result").text($input.val());
+	   });
+	   it.find(".number-decrement").click(function(e) {
+
+		   let $input = $(this).siblings('.number-input'),
+			   val = parseInt($input.val()),
+			   min = parseInt($input.attr('min')),
+			   step = parseInt($input.attr('step'));
+		   let temp = val - step;
+		   $input.val(temp >= min ? temp : min);
+		   it.find(".number-result").text($input.val());
+	   });
+	})
+
 	 
 })

@@ -1,0 +1,246 @@
+<!doctype html>
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="top">
+        <div class="wrapper">
+            <div class="top__container">
+                {{> bread/bread}}
+                <div class="m-title-2">Корзина</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="basket">
+        <div class="wrapper">
+            <div class="basket__container">
+                <div class="basket__top">
+                    <div class="basket__buttons">
+                        <a href="basket-1.html" class="m-button-2"> {{Icon iconName="basket"}} ТОВАРЫ</a>
+                        <a href="basket-2.html" class="m-button-2"> {{Icon iconName="user"}} ВАШИ ДАННЫЕ</a>
+                        <a href="basket-3.html" class="m-button-2"> {{Icon iconName="walet"}} ОПЛАТА</a>
+                        <a href="basket-4.html" class="m-button-2 active"> {{Icon iconName="deliv"}} ДОСТАВКА</a>
+                    </div>
+                </div>
+                
+                <div class="basket__tab-container">
+                    
+                    <div class="basket__table-content">
+                        <div class="checkout__container mb50">
+                            <div class="checkout-ch">
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Самовывоз
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Получить скомплектованный заказ Вы можете напрямую из нашего офиса по адресу: ул. Зои Космодемьянской, 10.
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Курьерская доставка по Санкт-Петербургу (штатным курьером компании)
+
+                                                
+                                                 
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Доставка в пределах КАД, в пешей доступности от метро. Стоимость доставки <span>350 рублей.</span>
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Получение заказа через сеть пунктов выдачи ГЛАВПУНКТ (http://glavpunkt.ru)
+
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Вы в удобное для Вам время можете получить свой заказ в ближайшем к Вам пункте выдачи. <br> 
+                                                <span>Самая недорогая и удобная доставка. Рекомендуем!</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка почтой России
+
+                                                
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Не дорогой и доступный для каждого вариант доставки через ФГУП Почта России. 
+                                                Доставим Ваш заказ в любой уголок нашей страны.
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка курьерской службой EMS почта России
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Нет ничего проще, оформить свой заказ через курьерскую службу и получить его по указанному адресу
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка курьерской службой Курьер Сервис Экспресс
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Нет ничего проще, оформить свой заказ через курьерскую службу и получить его по указанному адресу.
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка по России ТК Деловые линии
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Межтерминальная доставка грузов по России. Доставка на склад компании Деловые линии <span>по Санкт-Петербургу бесплатная.</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка по России ТК Энергия
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Межтерминальная доставка грузов по России. Доставка на склад компании Энергия <span>по Санкт-Петербургу бесплатная</span>
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка в Беларусь ТК ТА
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Межтерминальная доставка грузов в Республику Беларусь. Самая оптимальная транспортная компания для доставки грузов в Беларусь
+
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="checkout-ch__item">
+                                    <input type="radio" name="check1">
+                                    <div class="checkout-ch__input">
+                                    </div>
+                                    <div class="checkout-ch__content">
+                                        <div class="checkout-ch__title">
+                                                Доставка любой ТК или курьерской службой на выбор клиента
+
+                                                
+                                        </div>
+                                        <div class="checkout-ch__desc">
+                                                Если у Вас есть договор с транспортной компанией или курьерской службой, которая не попала в наш список, то мы можем отгрузить Ваш заказ через данную компанию. Вам лишь потребуется оформить заявку на забор груза с нашего склада
+
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="checkout-nav">
+                            <div class="wrapper">
+                                <a href="#" class="checkout-nav-button checkout-nav-prev">{{Icon iconName="arrow-left"}}Назад</a>
+                                <a href="checkout.html" class="m-button">ЗАВЕРШИТЬ ОФОРМЛЕНИЕ <div class="m-button__icon">{{Icon iconName="arrow"}}</div></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket__slider">
+                        <div class="basket__slider-img">
+                            <img src="%=static=%img/content/basket-slider.png" alt="">
+                        </div>
+                        <div class="swiper-container basket-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="basket__slider-title">
+                                        Бесплатная доставка
+                                    </div>
+                                    <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer/footer}}
+    
+</body>
+</html>
