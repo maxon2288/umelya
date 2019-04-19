@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="back">
+        <div class="wrapper">
+            <div class="back__container">
+                <a href="#" class="back__button">
+                    {{Icon iconName="arrow-left"}}
+                    Назад
+                </a>
+                <div class="back__pag">
+                    {{> bread/bread}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{> footer/footer}}
+    
+</body>
+</html>

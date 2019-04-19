@@ -36,6 +36,14 @@ $(document).ready(function () {
 		$(this).removeClass("like-notactive");
 	});
 
+	$(".m-field, .m-field-2").change(function() {
+		if ($(this).val().length > 0) {
+			$(this).addClass("is-focus");
+		} else {
+			$(this).removeClass("is-focus");
+		}
+	});	
+
 	$(".html img").each(function() {
 		$(this).wrap("<figure></figure>");
 	});
@@ -114,6 +122,19 @@ $(document).ready(function () {
 		},
 		pagination: {
 			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+	});
+	var swiper = new Swiper('.best-slider', {
+		speed: 400,
+		slidesPerView: 1,
+		spaceBetween: 43,
+		navigation: {
+			nextEl: '.best-next',
+			prevEl: '.best-prev',
+		},
+		pagination: {
+			el: '.best-pagination',
 			type: 'bullets',
 		},
 	});

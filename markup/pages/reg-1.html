@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="fp">
+        <div class="wrapper">
+            <div class="fp__container">
+                <form action="#" class="fp__form">
+                    <div class="m-title">
+                            Регистрация 
+                    </div>
+                    <input type="text" class="m-field" name="email" placeholder="Ваш E-mail">
+                    <input type="password" class="m-field" id="password" name="password" placeholder="Введите пароль">
+                    <input type="password" class="m-field" name="passwordAgain" placeholder="Введите пароль">
+                    <button class="m-button">ДАЛЕЕЕ <div class="m-button__icon">{{Icon iconName="arrow"}}</div></button>
+                    <a href="#" class="fp__reg-link">ВОЙТИ</a>
+                    <span class="information">Оставляя свои данные вы соглашаетесь с <a href="#">политикой конфеденциальности</a> сайта</span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{> footer/footer}}
+    
+</body>
+</html>

@@ -211,6 +211,9 @@
     &:focus ~ .m-placeholder {
         opacity: 0;
     }
+    &.is-focus ~ .m-placeholder {
+        opacity: 0;
+    }
     &.m-textarea {
         padding: 0;
         padding-left: 27px;
@@ -310,6 +313,48 @@
 
 }
 
+
+.m-check {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    input {
+        display: none;
+        &:checked {
+            & ~ div {
+                &:before {
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+
+    div {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        border: 2px solid $orange;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            top: 50%;
+            left: 50%;
+            height: 4px;
+            border-left: 2px solid $orange;
+            border-bottom: 2px solid $orange;
+            transform: translate(-50%, -70%) rotate(-45deg);
+            opacity: 0;
+            transition: 0.2s;
+        }
+    }
+    p {
+        margin-left: 15px;
+        color: #688AAB;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
 .next {
     margin-bottom: 85px;
     .m-button {
@@ -363,3 +408,4 @@
         }
     }
 }
+
