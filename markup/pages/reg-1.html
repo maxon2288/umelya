@@ -13,16 +13,20 @@
     <div class="fp">
         <div class="wrapper">
             <div class="fp__container">
-                <form action="#" class="fp__form">
+                <form action="#" class="fp__form reg-form">
                     <div class="m-title">
                             Регистрация 
                     </div>
-                    <input type="text" class="m-field" name="email" placeholder="Ваш E-mail">
-                    <input type="password" class="m-field" id="password" name="password" placeholder="Введите пароль">
-                    <input type="password" class="m-field" name="passwordAgain" placeholder="Введите пароль">
-                    <button class="m-button">ДАЛЕЕЕ <div class="m-button__icon">{{Icon iconName="arrow"}}</div></button>
-                    <a href="#" class="fp__reg-link">ВОЙТИ</a>
+                    <input type="text" class="m-field" name="name" placeholder="Ваше имя">
+                    <input type="text" class="m-field phone-mask" name="phone" placeholder="Ваш телефон">
+                    <button class="m-button">ЗАРЕГИСТРИРОВАТЬСЯ <div class="m-button__icon">{{Icon iconName="arrow"}}</div></button>
+                    <a href="#" class="fp__reg-link">ЗАРЕГИСТРИРОВАТЬСЯ</a>
                     <span class="information">Оставляя свои данные вы соглашаетесь с <a href="#">политикой конфеденциальности</a> сайта</span>
+                    <label class="m-check mt30">
+                        <input type="checkbox" name="check" required>
+                        <div></div>
+                        <p>Я не робот</p>
+                    </label>
                 </form>
             </div>
         </div>

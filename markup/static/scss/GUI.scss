@@ -36,8 +36,44 @@
     p {
         font-size: 16px;
         color: $text;
-        font-weight: 500;
+        font-weight: 400;
         margin-bottom: 20px;
+    }
+    h4 {
+        font-size: 24px;
+        color: $blue;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    h5 {
+        color: #1963AE;
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    ul {
+        li {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            list-style: none;
+            color: #688AAB;
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            font-size: 16px;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0px;
+                width: 10px;
+                height: 10px;
+                top: 5px;
+                border-radius: 50px;
+                background-color: $orange;
+            }
+        }
     }
 }
 .m-title-3 {
@@ -84,6 +120,48 @@
 
 }
 
+.sc {
+    &__container {
+        padding: 70px 80px;
+        background: $light;
+        display: flex;
+        flex-direction: column;
+    }
+    &__form {
+        display: flex;
+        align-items: center;   
+        margin-top: 10px; 
+        span {
+            color: #688AAB;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 30px;
+        }
+        input {
+            margin-right: 15px;
+        }
+        button {
+            max-width: 240px;
+            width: 100%;
+        }
+    }
+}
+
+.button-vk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    background-color: #6084AC;
+    border-radius: 50px;
+    height: 50px;
+    padding: 0 55px;
+    font-size: 14px;
+    color: white;
+    svg {
+        margin-right: 10px;
+    }
+}
 .m-button {
     font-size: 14px;
     line-height: normal;
@@ -98,6 +176,7 @@
     border-radius: 25px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
     align-items: center;    
     flex-grow: 0;
     padding-right: 58px;
@@ -150,6 +229,46 @@
 .m-button-noicon {
     @extend .m-button;
     padding-right: 30px;
+    
+}
+
+.m-table, .html table {
+    min-width: 100%;
+    background-color: #F4FAFF;
+    th,td {
+        padding: 22px 43px;
+        text-align: left;
+        border-left: 2px solid #D4E2ED;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+    th {
+        color: $blue;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    td {
+        color: #688AAB;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    tr {
+        border-bottom: 2px solid #D4E2ED;
+        &:first-child {
+            border-radius: 10px;
+            background: #E2EDF6;
+            border-bottom: none;
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+}
+.m-table__container {
+    max-width: 100%;
+    overflow-x: auto;
+    
 }
 
 
@@ -166,12 +285,13 @@
     font-size: 14px;
     line-height: normal;
     color: #B2C2CD;
+    transition: 0.3s;
     @media screen and (max-width: 600px) {
         padding: 6px 20px;
         height: 40px !important;
     }
     &.error {
-        border-color: #db3b3b !important;
+        border-color: $orange !important;
     }
     &.valid {
         border-color: #68a852 !important;
@@ -214,16 +334,32 @@
     &.is-focus ~ .m-placeholder {
         opacity: 0;
     }
-    &.m-textarea {
-        padding: 0;
-        padding-left: 27px;
-        padding-top: 13px;
-        border-radius: 26px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        vertical-align: top;
-        height: 110px !important;
+}
+
+.m-textarea {
+    padding: 0;
+    padding-left: 27px;
+    padding-top: 13px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    vertical-align: top;
+    height: 110px !important;
+    font-size: 14px;
+    line-height: normal;
+    color: #B2C2CD;
+    &::placeholder {
+        transition: 0.3s;
+        font-size: 14px;
+        line-height: normal;
+        color: #B2C2CD;
+        font-size: 12px;
+        position: absolute;
+        transition: 0.3s;
+    }
+    &:focus::placeholder {
+        opacity: 0;
     }
 }
 
@@ -299,6 +435,33 @@
 }
 .mb50 {
     margin-bottom: 50px !important;
+}
+.mt60 {
+    margin-top: 60px !important;
+}
+.mb60 {
+    margin-bottom: 60px !important;
+}
+
+.m-button-3 {
+    height: 50px;
+    background-color: transparent;
+    color: $orange;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border: 2px solid $orange;
+    transition: 0.3s;
+    border-radius: 100px;
+    cursor: pointer;
+    &:hover {
+        background-color: $orange;
+        color: white;
+    }
 }
 
 .mt85 {

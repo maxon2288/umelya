@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="ctc mb85">
+        <div class="wrapper">
+            <div class="ctc__container">
+                <div class="ctc__left">
+                    {{> bread/bread}}
+
+                    <div class="m-title-2">
+                        Контакты
+                    </div>
+
+                    <div class="ctc__info">
+
+                        <div class="map__info">
+                            <div class="ctc__block">
+                                <div class="map__item">
+                                    г. Сантк-Петербург, ул. Зои Космодемьянской, д.10 <br>
+                                    <span>(вход со двора, на домофоне код-1)</span>
+                                </div>
+                                <div class="map__item">
+                                    Часы работы: с 9:00 - 18:00 <br>
+                                    <span>(по будням)</span>
+                                </div>
+                            </div>
+                            <div class="ctc__block">
+                                <a href="tel:+86954563423" class="map__phone">+8 695 456 34 23</a>
+                                <a href="mailto:info@umelya.ru" class="map__mail">info@umelya.ru</a>
+                                <div class="map__social">
+                                    <a href="#">
+                                        {{Icon iconName="vk"}}
+                                    </a>
+                                    <a href="#">
+                                        {{Icon iconName="fb"}}
+                                    </a>
+                                    <a href="#">
+                                        {{Icon iconName="inst"}}
+                                    </a>
+                                    <a href="#">
+                                        {{Icon iconName="youtube"}}
+                                    </a>
+                                    <a href="#">
+                                        {{Icon iconName="ok"}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ctc__text">
+                            <p>
+                                У каждого человека есть хобби. Кто-то любит читать книги, кто-то предпочитает компьютерные игры, но немало и тех, кто увлекается рукоделием. У таких людей часто возникает вопрос: «Где купить высококачественные принадлежности для рукоделия?». В современных реалиях он довольно актуален.
+                            </p>
+
+                            <p>
+                                Если вы являетесь поклонником рукоделия, рекомендуем внимательно изучить наши обширные каталоги товаров для творчества. Мы уверены, что вы найдёте заготовки, материалы и инструменты, которые придутся вам по душе, но в то же время «не ударят по карману».
+                            </p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="ctc__right">
+                    <form action="#" class="ctc__form ctc-form">
+                        <div class="m-title-2">Форма обратной связи</div>
+                        <div class="m-desc">
+                            Здесь будет располагаться подзаголовок, верстальщик все сверстает с вашим текстом
+                        </div>
+
+                        <div class="ctc__fields">
+                            <input type="text" class="m-field" name="name" placeholder="Ваше имя">
+                            <input type="text" class="m-field" name="email" placeholder="Ваш E-mail">
+                            <textarea class="m-textarea" name="massage" placeholder="Поле для сообщения"></textarea>
+                        </div>
+
+                        <div class="ctc__form-bottom">
+                            <div class="m-load">
+                                {{Icon iconName="load"}}
+                                <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+                                <label for="file-1"><span>ПРИКРЕПИТЬ ФАЙЛ</span></label>
+                            </div>
+
+                            <button class="m-button">
+                                отправить
+                                <div class="m-button__icon">
+                                    {{Icon iconName="arrow"}}
+                                </div>
+                            </button>
+
+                        </div>
+
+                        <div class="ctc__information">
+                            <div class="information">Оставляя свои данные вы соглашаетесь с <a href="#">политикой конфеденциальности сайта</a>
+                            </div>
+                        </div>
+
+                        <div class="ctc__capcha">
+                            <img src="%=static=%img/content/capca.png" alt="">
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    {{> footer/footer}}
+    
+</body>
+</html>

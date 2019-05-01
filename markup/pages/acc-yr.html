@@ -1,0 +1,346 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="top">
+        <div class="wrapper">
+            <div class="top__container">
+                {{> bread/bread}}
+                <div class="m-title-2">Личный кабинет</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="acc">
+        <div class="wrapper tabs__container-1">
+            <div class="acc__top tabs__tabs">
+                <a href="tab1" class="m-button-2 tabs__tab">ВАШИ ДАННЫЕ</a>
+                <a href="tab2" class="m-button-2 tabs__tab">ОПЛАТА И ДОСТАВКА</a>
+                <a href="tab3" class="m-button-2 tabs__tab">ИСТОРИЯ ЗАКАЗОВ</a>
+                <a href="tab4" class="m-button-2 tabs__tab">ИЗБРАННОЕ</a>
+                <a href="tab5" class="m-button-2 tabs__tab active">СМЕНИТЬ ПАРОЛЬ</a>
+            </div>
+            
+            <div class="acc__container">
+                <div class="acc__content tab1 tabs__block">
+                    <div class="acc__tab">
+                        <div class="acc__add">
+                            <select class="m-select-2">
+                                <option>Юр. лицо №1</option>
+                                <option>Юр. лицо №2</option>
+                                <option>Юр. лицо №3</option>
+                                <option>Юр. лицо №4 </option>
+                            </select>
+                            <div class="acc__button acc-add">
+                                {{Icon iconName="plus"}}
+                            </div>
+                        </div>
+    
+                        <div class="acc__fields">
+                            <input type="text" name="name" class="acc-field" placeholder="Название" value="Специальные краски и название">
+                            <input type="text" name="name" class="acc-field" placeholder="ИНН" value="7801559890">
+                            <input type="text" name="name" class="acc-field" placeholder="КПП" value="044525974">
+                            <input type="text" name="name" class="acc-field" placeholder="Название" value="199004, г. Санкт-Петербург, 2-я линия В.О., дом 53, лит. А">
+                            <input type="text" name="name" class="acc-field" placeholder="ОГРН" value="044525974">
+                        </div>
+                        <div class="acc__field-bottom">
+                            <input type="text" name="name" class="acc-field" placeholder="Представитель" value="Иванов Иван Иванович">
+                            <input type="text" name="name" class="acc-field" placeholder="Должность" value="Должность">
+                            <input type="text" name="name" class="acc-field phone-mask" placeholder="Телефон" value="77472564581">
+                        </div>
+                        
+                    </div>
+                    <div class="acc__bottom-button">
+                        <a href="#" class="m-button sug__button">СОХРАНИТЬ</a>
+                    </div>
+                </div>
+                
+                <div class="acc__content tab2 tabs__block">
+                    <div class="acc__tab">
+                        <div class="acc__add">
+                            <select class="m-select-2">
+                                <option>Юр. лицо №1</option>
+                                <option>Юр. лицо №2</option>
+                                <option>Юр. лицо №3</option>
+                                <option>Юр. лицо №4 </option>
+                            </select>
+                            <div class="acc__button acc-add">
+                                {{Icon iconName="plus"}}
+                            </div>
+                        </div>
+
+                        <div class="acc__fields-container">
+                            <input type="text" name="name" class="acc-field" placeholder="БИК" value="044525974">                            
+                            <input type="text" name="name" class="acc-field" placeholder="Рассчётный счёт" value="40702810810000033645 в АО «Тинькофф Банк»">                            
+                            <input type="text" name="name" class="acc-field" placeholder="Контактный телефон" value="+7 (777) 777-77-77">                            
+                            <input type="text" name="name" class="acc-field" placeholder="Корреспондентский счёт" value="30101810600000000608">                            
+                            <input type="text" name="name" class="acc-field" placeholder="Контактное лицо" value="Виктор Семёнов">                            
+                        </div>
+    
+                        <div class="acc__deliv">
+                            <div class="acc__deliv-fields">
+                                <input type="text" name="name" class="acc-field" placeholder="Город" value="Кременчуг-Константиновское">                            
+                                <input type="text" name="name" class="m-field" placeholder="Адрес доставки">                            
+                            </div>
+                            <div class="acc__deliv-button">
+                                + Добавить адрес доставки
+                            </div>
+                        </div>
+
+
+                        <div class="acc__items">
+                            <div class="acc__item">
+                                    Оплата заказа непосредственно <span>в офисе компании</span>, при получении заказа
+                            </div>
+                            <div class="acc__item">
+                                    Оплата заказа <span>курьеру</span>, при получении заказа
+                            </div>
+                            <div class="acc__item">
+                                    Оплата от физического лица <span>
+                                            на карту
+                                            Сбербанка
+                                    </span>
+                            </div>
+                            <div class="acc__item">
+                                    Оплата через <span>Яндекс.Кассу </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="acc__bottom-button">
+                        <a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>
+                    </div>
+                </div>
+
+                <div class="acc__content tab3 tabs__block">
+                    <div class="acc__tab">
+                        <div class="acc__add">
+                            <select class="m-select-2">
+                                <option>Юр. лицо №1</option>
+                                <option>Юр. лицо №2</option>
+                                <option>Юр. лицо №3</option>
+                                <option>Юр. лицо №4 </option>
+                            </select>
+                            <div class="acc__button acc-add">
+                                {{Icon iconName="plus"}}
+                            </div>
+                        </div>
+                        <div class="acc__ord">
+                            <div class="acc__ord-top">
+                                <div class="acc__ord-ord">Заказ №21234555</div>
+                                <div class="m-button sug__button">ПОВТОРИТЬ ЗАКАЗ</div>
+                            </div>
+                        </div>
+
+                        <div class="acc__ord-content">
+
+                            <div class="acc__ord-left">
+                                <div class="acc__ord-title">
+                                    Состав заказа:
+                                </div>
+                                <div class="acc__ord-items">
+                                    
+                                    <div class="acc__ord-item">
+                                        <div class="acc__ord-img m-bg-cont">
+                                            <img src="%=static=%img/content/ord.png" alt="">
+                                        </div>
+                                        <div class="acc__ord-item-text">
+                                            <div class="acc__ord-item-title">
+                                                Краски гуашь, фирма “Луч”в ассортименте 12 шт
+                                            </div>
+                                            <div class="acc__ord-item-price">
+                                                800 ₽
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acc__ord-item">
+                                        <div class="acc__ord-img m-bg-cont">
+                                            <img src="%=static=%img/content/ord.png" alt="">
+                                        </div>
+                                        <div class="acc__ord-item-text">
+                                            <div class="acc__ord-item-title">
+                                                Краски гуашь, фирма “Луч”в ассортименте 12 шт
+                                            </div>
+                                            <div class="acc__ord-item-price">
+                                                800 ₽
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acc__ord-item">
+                                        <div class="acc__ord-img m-bg-cont">
+                                            <img src="%=static=%img/content/ord.png" alt="">
+                                        </div>
+                                        <div class="acc__ord-item-text">
+                                            <div class="acc__ord-item-title">
+                                                Краски гуашь, фирма “Луч”в ассортименте 12 шт
+                                            </div>
+                                            <div class="acc__ord-item-price">
+                                                800 ₽
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="acc__ord-right">
+                                <div class="acc__ord-title">
+                                    Данные доставки:
+                                </div>
+                                <div class="acc__ord-right-items">
+                                    <div class="acc__ord-right-item">
+                                        Контактное лицо: <span>Виктор Семёнов</span>
+                                    </div>
+                                    <div class="acc__ord-right-item">
+                                        Контактный телефон: <span>+7 (777) 777-77-88</span>
+                                    </div>
+                                    <div class="acc__ord-right-item">
+                                        Адрес доставки: <span>г. Саратов, 410000, ул Улица,
+                                                д. 13, оф. 13</span>
+                                    </div>
+                                    <div class="acc__ord-right-item">
+                                            Способ оплаты: <span>Оплата курьеру при получении</span>
+                                    </div>
+                                    <div class="acc__ord-right-item">
+                                        Итоговая цена: <span>2 300 ₽</span>
+                                    </div>
+                                    <div class="acc__ord-right-item">
+                                        Дата оформления: <span>13 марта 2019 года</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc__content tab4 tabs__block">
+                    <div class="acc__tab">
+                        <div class="acc__add">
+                            <select class="m-select-2">
+                                <option>Юр. лицо №1</option>
+                                <option>Юр. лицо №2</option>
+                                <option>Юр. лицо №3</option>
+                                <option>Юр. лицо №4 </option>
+                            </select>
+                            <div class="acc__button acc-add">
+                                {{Icon iconName="plus"}}
+                            </div>
+                        </div>
+
+                        <div class="acc__prods">
+                            <div class="acc__prods-item">
+                                <div class="acc__prods-close">
+                                    {{Icon iconName="close"}}
+                                </div>
+                                <div class="acc__prod">
+                                    {{> item/prod-item}}
+                                </div>
+                            </div>
+                            <div class="acc__prods-item">
+                                <div class="acc__prods-close">
+                                    {{Icon iconName="close"}}
+                                </div>
+                                <div class="acc__prod">
+                                    {{> item/prod-item}}
+                                </div>
+                            </div>
+                            <div class="acc__prods-item">
+                                <div class="acc__prods-close">
+                                    {{Icon iconName="close"}}
+                                </div>
+                                <div class="acc__prod">
+                                    {{> item/prod-item}}
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div class="acc__content tab5 active tabs__block">
+                    <div class="acc__tab">
+                        <div class="acc__add">
+                            <select class="m-select-2">
+                                <option>Юр. лицо №1</option>
+                                <option>Юр. лицо №2</option>
+                                <option>Юр. лицо №3</option>
+                                <option>Юр. лицо №4 </option>
+                            </select>
+                            <div class="acc__button acc-add">
+                                {{Icon iconName="plus"}}
+                            </div>
+                        </div>
+
+                        <div class="acc__password">
+                            <input type="password" name="[]" class="m-field" placeholder="Ваш старый пароль">
+                            <input type="password" name="[]" class="m-field" placeholder="Ваш старый пароль">
+                            <input type="password" name="[]" class="m-field" placeholder="Ваш старый пароль">
+                        </div>
+
+                        <div class="acc__information">
+                            <img src="%=static=%img/content/information.png" alt="">
+                            <span>Ваш пароль должен содержать не менее 8 символов <br>
+                                    в том числе: по крайней мере 1 буквы в верхнем регистре</span>
+                        </div>
+                       
+                    </div>
+                    <div class="acc__bottom-button">
+                        <a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="basket__slider">
+                    <div class="basket__slider-img">
+                        <img src="%=static=%img/content/basket-slider.png" alt="">
+                    </div>
+                    <div class="swiper-container basket-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="basket__slider-title">
+                                    Бесплатная доставка
+                                </div>
+                                <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="basket__slider-title">
+                                    Бесплатная доставка
+                                </div>
+                                <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="basket__slider-title">
+                                    Бесплатная доставка
+                                </div>
+                                <div class="basket__slider-desc">Узнайте, как получить заказные товары бесплатно до своего города. Узнайте, как получить заказные товары бесплатно до своего города</div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+
+            <div class="acc__tabs-container">
+                
+            </div>
+        </div>
+    </div>
+
+
+    {{> footer/footer}}
+    
+</body>
+</html>
