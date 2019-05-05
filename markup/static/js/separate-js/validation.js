@@ -75,6 +75,21 @@ $(document).ready(function() {
 
          });
 	 });
+    $('.sc-form').each(function() {
+        var it = $(this);
+         it.validate({
+			rules: {
+                email: {
+                    required: true,
+                    email: true,
+                },
+			},
+
+			errorPlacement: function (error, element) {
+			},
+
+         });
+	 });
     $('.form').each(function() {
         var it = $(this);
          it.validate({

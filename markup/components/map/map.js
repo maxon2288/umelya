@@ -14,7 +14,11 @@ $(document).ready(function () {
                     }, {
                         searchControlProvider: 'yandex#search'
                     });
-            
+
+                    if ($(window).width() <=1024) {
+                        myMap.setCenter([x - 0.015, +y]);
+                        // myPlacemark.geometry.setCoordinates([]);
+                    }
                     var myPlacemark = new ymaps.Placemark([x, y], {},
                 { iconLayout: 'default#image',
                 iconImageHref: 'static/img/content/marker.svg',

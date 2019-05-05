@@ -8,6 +8,7 @@ $(document).ready(function () {
 	var swiper = new Swiper('.first__slider', {
 		spaceBetween: 10,
 		speed: 1300,
+		slidesPerView: 1,
 		parallax: true,
 		// grabCursor: true,
 		clicable: false,
@@ -32,9 +33,6 @@ $(document).ready(function () {
 		it.closest(".m-field__container").append("<div class='m-placeholder'>"+placeholder+"</div>")
 		it.attr("placeholder", '')
 	});
-
-	
-	
 
 	$(".m-field, .m-field-2").change(function() {
 		if ($(this).val().length > 0) {
@@ -67,6 +65,14 @@ $(document).ready(function () {
 		speed: 400,
 		slidesPerView: 4,
 		spaceBetween: 30,
+		breakpoints: {
+			1024: {
+				slidesPerView: 2,
+			},
+			767: {
+				slidesPerView: 1,
+			}
+		},
 		navigation: {
 			nextEl: '.prod-next',
 			prevEl: '.prod-prev',
@@ -215,6 +221,11 @@ $(document).ready(function () {
 			nextEl: '.sert-slider-next',
 			prevEl: '.sert-slider-prev',
 		},
+		breakpoints: {
+			767: {
+				slidesPerView: 1,
+			},
+		},
 		pagination: {
 			el: '.swiper-pagination',
 			type: 'bullets',
@@ -227,6 +238,14 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: '.news-slider-next',
 			prevEl: '.news-slider-prev',
+		},
+		breakpoints: {
+			1024: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 1,
+			},
 		},
 		pagination: {
 			el: '.swiper-pagination',
@@ -241,6 +260,27 @@ $(document).ready(function () {
 			nextEl: '.video-next',
 			prevEl: '.video-prev',
 		},
+		breakpoints: {
+			1023: {
+				slidesPerView: 1,
+			}
+		},
+	});
+	$(".header-search").click(function() {
+		$(".header__search").addClass("visible");	
+	});
+	
+	$(document).click(function (e){ // событие клика по веб-документу
+		var div = $(".header__features"); // тут указываем ID элемента
+		if (!div.is(e.target) // если клик был не по нашему блоку
+			&& div.has(e.target).length === 0) { // и не по его дочерним элементам
+				$(".header__search").removeClass("visible");	
+				console.log(111);
+	
+		}
+	});
+	$(document).on("click", ".m-placeholder", function() {
+		$(this).closest(".m-field__container").find("input").focus();
 	});
 	var swiper = new Swiper('.reason-slider', {
 		speed: 400,
@@ -297,6 +337,17 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: '.rev-next',
 			prevEl: '.rev-prev',
+		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 3,
+			},
+			1023: {
+				slidesPerView: 2,
+			},
+			767: {
+				slidesPerView: 1,
+			},
 		},
 	});
 

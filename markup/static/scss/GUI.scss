@@ -5,6 +5,9 @@
     line-height: normal;
     font-size: 40px;
     color: #1963AE;
+    @media screen and (max-width: 767px) {
+        font-size: 32px;
+    }
 }
 .m-desc {
     font-size: 16px;
@@ -221,6 +224,9 @@
     line-height: normal;
     color: #1963AE;
     font-weight: bold;
+    @media screen and (max-width: 767px) {
+        font-size: 28px;
+    }
     span {
         color: $orange;
     }
@@ -286,10 +292,6 @@
     line-height: normal;
     color: #B2C2CD;
     transition: 0.3s;
-    @media screen and (max-width: 600px) {
-        padding: 6px 20px;
-        height: 40px !important;
-    }
     &.error {
         border-color: $orange !important;
     }
@@ -527,6 +529,9 @@
         display: flex;  
         flex-direction: row;
         justify-content: flex-end;
+        @media screen and (max-width: 767px) {
+            justify-content: center;
+        }
     }
 }
 
@@ -535,6 +540,9 @@
     .wrapper {
         display: flex;
         justify-content: space-between;  
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+        }
     }
     &-button {
         height: 50px;
@@ -550,6 +558,7 @@
         border-radius: 100px;   
         font-size: 14px;
         font-weight: bold;
+        margin-bottom: 20px;
         svg {
             fill: white;
             margin-right: 15px;
