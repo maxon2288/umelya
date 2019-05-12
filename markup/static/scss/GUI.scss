@@ -78,6 +78,13 @@
             }
         }
     }
+    figure {
+        max-width: 100%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
 .m-title-3 {
     color: $blue;
@@ -134,18 +141,27 @@
         display: flex;
         align-items: center;   
         margin-top: 10px; 
+        flex-wrap: wrap;
         span {
             color: #688AAB;
             font-size: 16px;
             font-weight: 500;
             margin-right: 30px;
         }
+        a {
+            margin-bottom: 20px;
+        }
         input {
             margin-right: 15px;
+            margin-bottom: 10px;
+        }
+        .m-field__container {
+            margin-bottom: 20px;
         }
         button {
             max-width: 240px;
             width: 100%;
+            margin-bottom: 20px;
         }
     }
 }
@@ -292,6 +308,7 @@
     line-height: normal;
     color: #B2C2CD;
     transition: 0.3s;
+    box-shadow: none;
     &.error {
         border-color: $orange !important;
     }

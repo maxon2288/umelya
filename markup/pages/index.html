@@ -12,10 +12,6 @@
 
     {{> header/header}}
 
-    <div class="SWIPER-COTNAINER">
-        .
-    </div>
-
 
     <div class="first mb70 mt30">
         <div class="wrapper">
@@ -216,18 +212,102 @@
             <div class="slider-button slider-button__prev prod-prev">
                 {{Icon iconName="arrow"}}
             </div>
-            <div class="prod__container">
+            <div class="prod__container tabs__container-2">
 
                 <div class="prod__top">
-                    <div class="ctg-buttons">
-                        <a href="#" class="m-button-2 active">РАСПРОДАЖА</a>
-                        <a href="#" class="m-button-2">НОВИНКИ</a>
-                        <a href="#" class="m-button-2">ХИТЫ ПРОДАЖ</a>
+                    <div class="ctg-buttons tabs__tabs">
+                        <a href="12tab1" class="m-button-2 active tabs__tab">РАСПРОДАЖА</a>
+                        <a href="12tab2" class="m-button-2 tabs__tab">НОВИНКИ</a>
+                        <a href="12tab3" class="m-button-2 tabs__tab">ХИТЫ ПРОДАЖ</a>
                     </div>
                 </div>
 
-                <div class="prod__slider">
-                    <div class="swiper-container prod-slider">
+                <div class="prod__slider tabs__block 12tab1 ">
+                    <div class="swiper-container prod-slider1 prod-slider">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod__slider tabs__block 12tab2 active">
+                    <div class="swiper-container prod-slider2 prod-slider">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                {{> item/prod-item}}
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prod__slider tabs__block 12tab3">
+                    <div class="swiper-container prod-slider3 prod-slider">
                         <div class="swiper-wrapper">
 
                             <div class="swiper-slide">

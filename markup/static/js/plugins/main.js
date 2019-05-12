@@ -25,21 +25,39 @@ $(document).ready(function () {
 	});
 
 	$('.phone-mask').mask("+ 7 000 000 00 00");
+	
+	function fields() {
+		$(".m-field, m-field-2").each(function() {
+			var it = $(this);
+			var placeholder = it.attr("placeholder");
+			it.wrap("<div class='m-field__container'></div>");
+			it.closest(".m-field__container").append("<div class='m-placeholder'>"+placeholder+"</div>")
+			it.attr("placeholder", '')
+		});
+	
+		$(".m-field, .m-field-2").change(function() {
+			if ($(this).val().length > 0) {
+				$(this).addClass("is-focus");
+			} else {
+				$(this).removeClass("is-focus");
+			}
+		});	
+	}
+	fields();
 
-	$(".m-field, m-field-2").each(function() {
-		var it = $(this);
-		var placeholder = it.attr("placeholder");
-		it.wrap("<div class='m-field__container'></div>");
-		it.closest(".m-field__container").append("<div class='m-placeholder'>"+placeholder+"</div>")
-		it.attr("placeholder", '')
-	});
-
-	$(".m-field, .m-field-2").change(function() {
-		if ($(this).val().length > 0) {
-			$(this).addClass("is-focus");
-		} else {
-			$(this).removeClass("is-focus");
-		}
+	$(document).on("click", ".acc__deliv-button", function() {
+		$(".acc__deliv-fields-container").append(`
+			<div class="acc__deliv-fields">
+				<div class="acc-field__container">
+					<input type="text" name="name" class="acc-field" placeholder="" value="">
+				<div class="placeholder">Город</div>
+			</div>                            
+			<div class="m-field__container">
+				<input type="text" name="name" class="m-field" placeholder="">
+				<div class="m-placeholder">Адрес доставки</div>
+			</div>                            
+		</div>
+		`)
 	});	
 
 	$(".html img").each(function() {
@@ -61,7 +79,34 @@ $(document).ready(function () {
 			  }
 		},
 	});
-	var swiper = new Swiper('.prod-slider', {
+	
+
+	//tabs------------
+	$(".tabs__container").each(function() {
+		$('.tabs__tab').click(function(e) {
+			e.preventDefault();
+			var it = $(this);
+			var href = it.attr("href");
+			it.closest(".tabs__tabs").find(".tabs__tab").removeClass("active");
+			it.addClass("active");
+			$(".tabs__block").removeClass("active");
+			it.closest(".tabs__container").find("." + href).addClass('active');
+			it.closest('.tabs__container').find("." + href + " input").val('');
+			it.closest('.tabs__container').find("." + href + " input").removeClass("is-focus");
+		});
+	});
+	$(".tabs__container-1").each(function() {
+		$('.tabs__tab').click(function(e) {
+			e.preventDefault();
+			var it = $(this);
+			var href = it.attr("href");
+			it.closest(".tabs__tabs").find(".tabs__tab").removeClass("active");
+			it.addClass("active");
+			$(".tabs__block").removeClass("active");
+			it.closest(".tabs__container-1").find("." + href).addClass('active');
+		});
+	});
+	var swiper = new Swiper(".prod-slider", {
 		speed: 400,
 		slidesPerView: 4,
 		spaceBetween: 30,
@@ -82,32 +127,38 @@ $(document).ready(function () {
 			type: 'bullets',
 		},
 	});
-
-	//tabs------------
-	$(".tabs__container").each(function() {
+	$(".tabs__container-2").each(function() {
 		$('.tabs__tab').click(function(e) {
-			console.log(111);
 			e.preventDefault();
 			var it = $(this);
 			var href = it.attr("href");
 			it.closest(".tabs__tabs").find(".tabs__tab").removeClass("active");
 			it.addClass("active");
 			$(".tabs__block").removeClass("active");
-			it.closest(".tabs__container").find("." + href).addClass('active');
-			it.closest('.tabs__container').find("." + href + " input").val('');
-			it.closest('.tabs__container').find("." + href + " input").removeClass("is-focus");
-		});
-	});
-	$(".tabs__container-1").each(function() {
-		$('.tabs__tab').click(function(e) {
-			console.log(111);
-			e.preventDefault();
-			var it = $(this);
-			var href = it.attr("href");
-			it.closest(".tabs__tabs").find(".tabs__tab").removeClass("active");
-			it.addClass("active");
-			$(".tabs__block").removeClass("active");
-			it.closest(".tabs__container-1").find("." + href).addClass('active');
+			it.closest(".tabs__container-2").find("." + href).addClass('active');
+			it.closest('.tabs__container-2').find("." + href + " input").val('');
+			it.closest('.tabs__container-2').find("." + href + " input").removeClass("is-focus");
+			var swiper = new Swiper(".prod-slider", {
+				speed: 400,
+				slidesPerView: 4,
+				spaceBetween: 30,
+				breakpoints: {
+					1024: {
+						slidesPerView: 2,
+					},
+					767: {
+						slidesPerView: 1,
+					}
+				},
+				navigation: {
+					nextEl: '.prod-next',
+					prevEl: '.prod-prev',
+				},	
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+				},
+			});
 		});
 	});
 
@@ -275,7 +326,6 @@ $(document).ready(function () {
 		if (!div.is(e.target) // если клик был не по нашему блоку
 			&& div.has(e.target).length === 0) { // и не по его дочерним элементам
 				$(".header__search").removeClass("visible");	
-				console.log(111);
 	
 		}
 	});
@@ -446,6 +496,265 @@ $(document).ready(function () {
 		$(this).addClass("active");
 
 	});
+
+	$(document).on("click", ".nice-select.acc-select .option", function() {
+		$(".acctab").removeClass('active');
+		var it = $(this);
+		var tab = it.attr("data-value");
+		console.log(tab);
+		$("." + tab).addClass('active');
+	});
+
+	var i = 1;
+	
+	if ($(".acc-select .list").find("li").length != 5) {
+		$(".acc-add").click(function() {
+			i++;
+			console.log($(".acc-select .list").find("li").length);
+			$("select.acc-select").append(`
+				<option value="acctab${i}">Юр. лицо №${i}</option>
+			`)
+			$(".acc-select .list").append(`
+				<li data-value="acctab${i}" class="option">Юр. лицо №${i}</li>
+			`)
+			$(".tab1").append(`
+			<div class="acc__tab-container acctab acctab${i}">
+				<div class="acc__tab">
+
+				<div class="acc__fields-1">
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">Фамилия</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">Имя</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">Отчество</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">Город</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">Адрес</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field phone-mask" placeholder="" value="">
+					<div class="placeholder">Номер</div>
+					</div>
+					<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+					<div class="placeholder">E-mail</div>
+				</div>
+			</div>
+					
+				</div>
+				<div class="acc__bottom-button">
+					<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>
+				</div>
+			</div>
+			`)
+			$(".tab2").append(`
+			<div class="acc__tab-container acctab acctab${i} active">
+				<div class="acc__tab">
+					<div class="acc__deliv">
+						<div class="acc__deliv-fields-container">
+						<div class="acc__deliv-fields">
+						<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">
+						<div class="placeholder">Город</div>
+						</div>                            
+						<div class="m-field__container"><input type="text" name="name" class="m-field" placeholder=""><div class="m-placeholder">Адрес доставки</div></div>                            
+					</div>
+
+						</div>
+						<div class="acc__deliv-button">
+							+ Добавить адрес доставки
+						</div>
+					</div>
+					<div class="acc__items">
+						<div class="acc__item">
+								Оплата заказа непосредственно <span>в офисе компании</span>, при получении заказа
+						</div>
+						<div class="acc__item">
+								Оплата заказа <span>курьеру</span>, при получении заказа
+						</div>
+						<div class="acc__item">
+								Оплата от физического лица <span>
+										на карту
+										Сбербанка
+								</span>
+						</div>
+						<div class="acc__item">
+								Оплата через <span>Яндекс.Кассу </span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="acc__bottom-button">
+					<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>
+				</div>
+			</div>
+			`)
+
+			$(".tab3").append(`
+			<div class="acc__tab-container acctab acctab${i} active">
+			<div class="acc__tab">
+				<div class="acc__ord">
+					<div class="acc__ord-top">
+						<div class="acc__ord-ord">Заказ №21234555</div>
+						<div class="m-button sug__button">ПОВТОРИТЬ ЗАКАЗ</div>
+					</div>
+				</div>
+
+				<div class="acc__ord-content">
+
+					<div class="acc__ord-left">
+						<div class="acc__ord-title">
+							Состав заказа:
+						</div>
+						<div class="acc__ord-items">
+							
+						</div>
+					</div>
+
+
+					<div class="acc__ord-right">
+						<div class="acc__ord-title">
+							Данные доставки:
+						</div>
+						<div class="acc__ord-right-items">
+							<div class="acc__ord-right-item">
+								Контактное лицо: <span></span>
+							</div>
+							<div class="acc__ord-right-item">
+								Контактный телефон: <span></span>
+							</div>
+							<div class="acc__ord-right-item">
+								Адрес доставки: <span> Улица,
+										д. 13, оф. 13</span>
+							</div>
+							<div class="acc__ord-right-item">
+									Способ оплаты: <span></span>
+							</div>
+							<div class="acc__ord-right-item">
+								Итоговая цена: <span></span>
+							</div>
+							<div class="acc__ord-right-item">
+								Дата оформления: <span></span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		`)
+
+		$(".tab4").append(`
+		<div class="acc__tab-container acctab acctab${i} active">
+			<div class="acc__tab">
+				<div class="acc__prods">
+				<div class="acc__prods-item">
+				<div class="acc__prods-close">
+					
+<svg class="icon__close" width="20px" height="20px">
+<use xlink:href="#close"></use>
+</svg>
+
+				</div>
+				<div class="acc__prod">
+					<div class="prod__item">
+						<div class="prod__like like like-notactive">
+							
+								<svg class="icon__like" width="20px" height="18px">
+									<use xlink:href="#like"></use>
+								</svg>
+							
+						</div>
+						
+						<div class="prod__img-cont">
+							<a href="prod.html" class="prod__img m-bg-cont" style="background-image: url(&quot;/static/img/content/img-1.png&quot;);">
+								<img src="/static/img/content/img-1.png" alt="">
+							</a>
+						</div>
+						<div class="prod__title">
+							Буква на колесах в ассортименте 14,6 см 6 мм
+						</div>
+						<div class="prod__article">
+							Арктикул: 34578789
+						</div>
+						<div class="prod__desc">
+							Лучшие изделия, благодаря качественным материалам
+						</div>
+					
+						<div class="prod__price">
+							<div class="prod__price-item">
+								<span>РОЗН:</span>
+								<div class="prod__price-new">
+									12500 руб.
+								</div>
+								<div class="prod__price-old">
+									2500 руб.
+								</div>
+							</div>
+							<div class="prod__price-item prod__price-item-2">
+								<span>РОЗН:</span>
+								<div class="prod__price-new">
+									от 2500 руб.
+								</div>
+								<div class="prod__price-old">
+									2500 руб.
+								</div>
+							</div>
+						</div>
+						<div class="prod__button">
+							<div class="m-button reverse callPopup basket-notactive data-id" data-popupblock="basket-popup" data-id="1">
+								<span>В КОРЗИНУ</span>
+								<div class="m-button__icon">
+									
+								<svg class="icon__basket" width="22px" height="22px">
+									<use xlink:href="#basket"></use>
+								</svg>
+							
+								</div>
+							</div>
+						</div>
+						
+					</div>                                        </div>
+			</div>
+				</div>
+				
+			</div>
+		</div>
+		`)
+
+		$(".tab5").append(`
+		<div class="acc__tab-container acctab acctab${i} active">
+				<div class="acc__tab">
+					<div class="acc__password">
+						<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>
+						<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>
+						<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>
+					</div>
+
+					<div class="acc__information">
+					<img src="/static/img/content/information.png" alt="">
+						<span>Ваш пароль должен содержать не менее 8 символов <br>
+								в том числе: по крайней мере 1 букву в верхнем регистре</span>
+					</div>
+					
+				</div>
+				<div class="acc__bottom-button">
+					<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>
+				</div>
+			</div>
+		`)
+
+			$(".option[data-value='acctab"+i+"']").trigger("click");
+		});
+	} 
+	
+
+	
+
+
 
 	 
 })
