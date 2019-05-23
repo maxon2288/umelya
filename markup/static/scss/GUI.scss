@@ -24,13 +24,11 @@
     }
 }
 
-
-
-
 .html {
     h1,h2 {
         @extend .m-title-2;
         margin-bottom: 20px;
+        line-height: 30px !important;
     }
     h3 {
         @extend .m-title-3;
@@ -80,12 +78,14 @@
     }
     figure {
         max-width: 100%;
+        margin-left: 20px;
         img {
             max-width: 100%;
             height: auto;
         }
     }
 }
+
 .m-title-3 {
     color: $blue;
     font-weight: bold;

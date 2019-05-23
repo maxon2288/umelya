@@ -401,28 +401,9 @@ $(document).ready(function () {
 		},
 	});
 
-	const controls = 
-'<div class="plyr__controls play">'+
-+'    <button type="button" class="play__button" data-plyr="play">'+
-+'	<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">'+
-+'	<path d="M13.7096 8.64707L1.20701 0.0754375C1.07465 -0.0149932 0.903067 -0.024422 0.761658 0.0488654C0.619818 0.12301 0.531006 0.268728 0.531006 0.42816V17.5714C0.531006 17.7309 0.619818 17.877 0.761658 17.9511C0.824602 17.9837 0.893582 18 0.962131 18C1.04792 18 1.13329 17.9743 1.20701 17.9241L13.7096 9.35252C13.8265 9.27237 13.8959 9.1408 13.8959 8.99979C13.8959 8.85879 13.826 8.72722 13.7096 8.64707Z" fill="#1963AE"/>'+
-+'	</svg>	'+
-+'    </button>	'+
-+'	<div class="play__text play__time plyr__time--current" aria-label="Current time">00:00</div>'+
-+'	<div class="play__text plyr__time--duration" aria-label="Duration">00:00</div>'+
-+'	<div class="plyr__progress">'+
-+'        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">'+
-+'        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>'+
-+'        <span role="tooltip" class="plyr__tooltip">00:00</span>'+
-+'    </div>'+
-+'    <button type="button" class="plyr__control play__mute" aria-label="Mute" data-plyr="mute">'+
-+'	<svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>'+
-+'	<svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>'+
-+'	<span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>'+
-+'	<span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>'+
-+'    </button>'+
-+'	</div>'
-	;
+	const controls = '<div class="plyr__controls play">'+'    <button type="button" class="play__button" data-plyr="play">'+'	<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">'+'	<path d="M13.7096 8.64707L1.20701 0.0754375C1.07465 -0.0149932 0.903067 -0.024422 0.761658 0.0488654C0.619818 0.12301 0.531006 0.268728 0.531006 0.42816V17.5714C0.531006 17.7309 0.619818 17.877 0.761658 17.9511C0.824602 17.9837 0.893582 18 0.962131 18C1.04792 18 1.13329 17.9743 1.20701 17.9241L13.7096 9.35252C13.8265 9.27237 13.8959 9.1408 13.8959 8.99979C13.8959 8.85879 13.826 8.72722 13.7096 8.64707Z" fill="#1963AE"/>'+'	</svg>	'+'    </button>	'+'	<div class="play__text play__time plyr__time--current" aria-label="Current time">00:00</div>'+'	<div class="play__text plyr__time--duration" aria-label="Duration">00:00</div>'+'	<div class="plyr__progress">'+'        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">'+'        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>'+'        <span role="tooltip" class="plyr__tooltip">00:00</span>'+'    </div>'+'    <button type="button" class="plyr__control play__mute" aria-label="Mute" data-plyr="mute">'+'	<svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>'+'	<svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>'+'	<span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>'+'	<span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>'+'    </button>'+'	</div>';
+
+console.log(controls);
 	
 // Setup the player
 // const player = new Plyr('#player', { controls });
