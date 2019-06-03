@@ -874,6 +874,14 @@ a {
         grid-gap: 30px;
         display: flex;
         flex-wrap: wrap;    
+        @media screen and (max-width: 1023px) {
+            overflow: hidden;
+        }
+        .swiper-slide {
+            width: calc(20% - 24px);
+            margin-right: 30px;
+            height: auto !important;
+        }
         &-item {
             display: flex;
             flex-direction: column;
@@ -882,27 +890,16 @@ a {
             background-color: #fff;
             background: #FFFFFF;
             transition: 0.4s;
+            height: 100%;
+            align-self: stretch;
             box-shadow: 0px 4px 10px rgba(25, 99, 174, 0.1);
             border-radius: 10px;
             border: 2px solid #fff;
-            margin-right: 30px;
-            width: calc(20% - 24px);
             &:hover {
                 border-color: $blue;
             }
             &:last-child {
                 margin-right: 0;
-            }
-            @media screen and (max-width: 1023px) {
-                width: calc(50% - 30px);
-                margin-bottom: 30px;
-            }
-            @media screen and (max-width: 767px) {
-                width: 100%;
-                margin-right: 0;
-                &:last-child {
-                    margin-bottom: 0;
-                }
             }
         }
         &-icon {
@@ -1789,7 +1786,6 @@ a {
     img {
         max-width: 100%;
         height: auto;
-        margin-left: 20px;
         @media screen and (max-width: 768px) {
             float: none !important;
         }
@@ -1919,6 +1915,9 @@ a {
         @media screen and (max-width: 767px) {
             padding: 0 45px;
         }
+        @media screen and (max-width: 500px) {
+            padding: 0;
+        }
     }
     &__slide {
         position: relative;
@@ -2002,6 +2001,9 @@ a {
             margin-left: 0;
             width: 100%;
             margin-top: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 0 45px;
         }
     }
 }
@@ -3472,7 +3474,7 @@ a {
         height: 250px;
         overflow: hidden;
         width: 100%;
-        a {
+        div {
             transition: 0.3s;
             position: absolute;
             top: 0;
@@ -4571,5 +4573,34 @@ a {
             animation: rot 3s linear;
     
         }
+    }
+}
+
+
+.nf {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 160px;
+        padding-bottom: 85px;
+    }
+    &__404 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    &__desc {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: normal;
+        color: #688AAB;
+    }
+    .m-button {
+        margin-top: 35px;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
     }
 }

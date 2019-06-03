@@ -47,15 +47,15 @@ $(document).ready(function () {
 	$(document).on("click", ".acc__deliv-button", function() {
 		$(".acc__deliv-fields-container").append(
 			'<div class="acc__deliv-fields">'+
-				+'<div class="acc-field__container">'+
-					+'<input type="text" name="name" class="acc-field" placeholder="" value="">'+
-				+'<div class="placeholder">Город</div>'+
-			+'</div>'+
-			+'<div class="m-field__container">'+
-				+'<input type="text" name="name" class="m-field" placeholder="">+'
-				+'<div class="m-placeholder">Адрес доставки</div>'+
-			+'</div>'+
-		+'</div>')
+				'<div class="acc-field__container">'+
+					'<input type="text" name="name" class="acc-field" placeholder="" value="">'+
+				'<div class="placeholder">Город</div>'+
+			'</div>'+
+			'<div class="m-field__container">'+
+				'<input type="text" name="name" class="m-field" placeholder="">'+
+				'<div class="m-placeholder">Адрес доставки</div>'+
+			'</div>'+
+		'</div>')
 	});	
 
 	$(".html img").each(function() {
@@ -165,7 +165,7 @@ $(document).ready(function () {
 		$(this).attr("placeholder", '');
 		$(this).wrap("<div class='acc-field__container'></div>")
 		$(this).closest(".acc-field__container").append(
-			+'<div class="placeholder">'+plh+'</div>'
+			'<div class="placeholder">'+plh+'</div>'
 		)
 	});
 
@@ -404,25 +404,49 @@ $(document).ready(function () {
 	const controls = '<div class="plyr__controls play">'+'    <button type="button" class="play__button" data-plyr="play">'+'	<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">'+'	<path d="M13.7096 8.64707L1.20701 0.0754375C1.07465 -0.0149932 0.903067 -0.024422 0.761658 0.0488654C0.619818 0.12301 0.531006 0.268728 0.531006 0.42816V17.5714C0.531006 17.7309 0.619818 17.877 0.761658 17.9511C0.824602 17.9837 0.893582 18 0.962131 18C1.04792 18 1.13329 17.9743 1.20701 17.9241L13.7096 9.35252C13.8265 9.27237 13.8959 9.1408 13.8959 8.99979C13.8959 8.85879 13.826 8.72722 13.7096 8.64707Z" fill="#1963AE"/>'+'	</svg>	'+'    </button>	'+'	<div class="play__text play__time plyr__time--current" aria-label="Current time">00:00</div>'+'	<div class="play__text plyr__time--duration" aria-label="Duration">00:00</div>'+'	<div class="plyr__progress">'+'        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">'+'        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>'+'        <span role="tooltip" class="plyr__tooltip">00:00</span>'+'    </div>'+'    <button type="button" class="plyr__control play__mute" aria-label="Mute" data-plyr="mute">'+'	<svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>'+'	<svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>'+'	<span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>'+'	<span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>'+'    </button>'+'	</div>';
 
 console.log(controls);
+
+if ($(window).width() <= 1023) {
+	var swiper = new Swiper('.first__bottom', {
+		speed: 400,
+		slidesPerView: 2,
+		spaceBetween: 43,
+		autoplay: {
+			delay: 2500,
+		},
+		navigation: {
+			nextEl: '.reason-next',
+			prevEl: '.reason-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+		},
+		breakpoints: {
+			767: {
+				slidesPerView: 1,
+			},
+		},
+	});
+}
 	
 // Setup the player
 // const player = new Plyr('#player', { controls });
 
-		const source = 'https://cdn.busuu.com/v1.0/mp3m2n/media/audio/1_1__enc__dialogue1_1486565671.mp3';
+	$(".js-player-instance").each(function() {
+
+		var source = $(this).attr('data-source');
 		
-		$(".js-player-instance").each(function() {
-			
-			const player = new Plyr('.js-player-instance', {
-				autoplay: false,
-				controls: controls,
-			});
-			player.source = {
-				type: 'audio',
-				sources: [{
-						src: source,
-						type: 'audio/mp3'
-					}]
-			};
+		const player = new Plyr('.js-player-instance', {
+			autoplay: false,
+			controls: controls,
+		});
+		player.source = {
+			type: 'audio',
+			sources: [{
+					src: source,
+					type: 'audio/mp3'
+				}]
+		};
 	});
 
 	$(".m-table, .html table").each(function() {
@@ -495,230 +519,222 @@ console.log(controls);
 			)
 			$(".tab1").append(
 			'<div class="acc__tab-container acctab acctab'+i+'">'+
-			+'	<div class="acc__tab">'+
-			+'	<div class="acc__fields-1">'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">Фамилия</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">Имя</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">Отчество</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">Город</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">Адрес</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field phone-mask" placeholder="" value="">'+
-			+'		<div class="placeholder">Номер</div>'+
-			+'		</div>'+
-			+'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'		<div class="placeholder">E-mail</div>'+
-			+'	</div>'+
-			+'</div>'+
-			+'		'+
-			+'	</div>'+
-			+'	<div class="acc__bottom-button">'+
-			+'		<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
-			+'	</div>'+
-			+'</div>'
-			)
+			'	<div class="acc__tab">'+
+			'	<div class="acc__fields-1">'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">Фамилия</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">Имя</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">Отчество</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">Город</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">Адрес</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field phone-mask" placeholder="" value="">'+
+			'		<div class="placeholder">Номер</div>'+
+			'		</div>'+
+			'		<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'		<div class="placeholder">E-mail</div>'+
+			'	</div>'+
+			'</div>'+
+			'	</div>'+
+			'	<div class="acc__bottom-button">'+
+			'		<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
+			'	</div>'+
+			'</div>'
+			);
 			$(".tab2").append(
-			+'<div class="acc__tab-container acctab acctab'+i+' active">'+
-			+'	<div class="acc__tab">'+
-			+'		<div class="acc__deliv">'+
-			+'			<div class="acc__deliv-fields-container">'+
-			+'			<div class="acc__deliv-fields">'+
-			+'			<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
-			+'			<div class="placeholder">Город</div>'+
-			+'			</div>'+
-			+'			<div class="m-field__container"><input type="text" name="name" class="m-field" placeholder=""><div class="m-placeholder">Адрес доставки</div></div>'+
-			+'		</div>'+
-			+'			</div>'+
-			+'			<div class="acc__deliv-button">'+
-			+'				+ Добавить адрес доставки'+
-			+'			</div>'+
-			+'		</div>'+
-			+'		<div class="acc__items">'+
-			+'			<div class="acc__item">'+
-			+'					Оплата заказа непосредственно <span>в офисе компании</span>, при получении заказа'+
-			+'			</div>'+
-			+'			<div class="acc__item">'+
-			+'					Оплата заказа <span>курьеру</span>, при получении заказа'+
-			+'			</div>'+
-			+'			<div class="acc__item">'+
-			+'					Оплата от физического лица <span>'+
-			+'							на карту'+
-			+'							Сбербанка'+
-			+'					</span>'+
-			+'			</div>'+
-			+'			<div class="acc__item">'+
-			+'					Оплата через <span>Яндекс.Кассу </span>'+
-			+'			</div>'+
-			+'		</div>'+
-			+'	</div>'+
-			+'	<div class="acc__bottom-button">'+
-			+'		<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
-			+'	</div>'+
-			+'</div>'
+			'<div class="acc__tab-container acctab acctab'+i+' active">'+
+			'	<div class="acc__tab">'+
+			'		<div class="acc__deliv">'+
+			'			<div class="acc__deliv-fields-container">'+
+			'			<div class="acc__deliv-fields">'+
+			'			<div class="acc-field__container"><input type="text" name="name" class="acc-field" placeholder="" value="">'+
+			'			<div class="placeholder">Город</div>'+
+			'			</div>'+
+			'			<div class="m-field__container"><input type="text" name="name" class="m-field" placeholder=""><div class="m-placeholder">Адрес доставки</div></div>'+
+			'		</div>'+
+			'			</div>'+
+			'			<div class="acc__deliv-button">'+
+			'				+ Добавить адрес доставки'+
+			'			</div>'+
+			'		</div>'+
+			'		<div class="acc__items">'+
+			'			<div class="acc__item">'+
+			'					Оплата заказа непосредственно <span>в офисе компании</span>, при получении заказа'+
+			'			</div>'+
+			'			<div class="acc__item">'+
+			'					Оплата заказа <span>курьеру</span>, при получении заказа'+
+			'			</div>'+
+			'			<div class="acc__item">'+
+			'					Оплата от физического лица <span>'+
+			'							на карту'+
+			'							Сбербанка'+
+			'					</span>'+
+			'			</div>'+
+			'			<div class="acc__item">'+
+			'					Оплата через <span>Яндекс.Кассу </span>'+
+			'			</div>'+
+			'		</div>'+
+			'	</div>'+
+			'	<div class="acc__bottom-button">'+
+			'		<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
+			'	</div>'+
+			'</div>'
 			)
 
 			$(".tab3").append(
-+'			<div class="acc__tab-container acctab acctab'+i+' active">'+
-+'			<div class="acc__tab">'+
-				+'<div class="acc__ord">'+
-					+'<div class="acc__ord-top">'+
-						+'<div class="acc__ord-ord">Заказ №21234555</div>'+
-						+'<div class="m-button sug__button">ПОВТОРИТЬ ЗАКАЗ</div>'+
-					+'</div>'+
-				+'</div>'+
-				+'<div class="acc__ord-content">'+
-					+'<div class="acc__ord-left">'+
-						+'<div class="acc__ord-title">'+
-							+'Состав заказа:'+
-						+'</div>'+
-						+'<div class="acc__ord-items">'+
-						+'</div>'+
-					+'</div>'+
-					+'<div class="acc__ord-right">'+
-						+'<div class="acc__ord-title">'+
-							+'Данные доставки:'+
-						+'</div>'+
-						+'<div class="acc__ord-right-items">'+
-							+'<div class="acc__ord-right-item">'+
-								+'Контактное лицо: <span></span>'+
-							+'</div>'+
-							+'<div class="acc__ord-right-item">'+
-								+'Контактный телефон: <span></span>'+
-							+'</div>'+
-							+'<div class="acc__ord-right-item">'+
-								+'Адрес доставки: <span> Улица,'+
-										+'д. 13, оф. 13</span>'+
-							+'</div>'+
-							+'<div class="acc__ord-right-item">'+
-									+'Способ оплаты: <span></span>'+
-							+'</div>'+
-							+'<div class="acc__ord-right-item">'+
-								+'Итоговая цена: <span></span>'+
-							+'</div>'+
-							+'<div class="acc__ord-right-item">'+
-								+'Дата оформления: <span></span>'+
-							+'</div>'+
-						+'</div>'+
-					+'</div>'+
-				+'</div>'+
-+'</div>'+
-		+'</div>'
+		'<div class="acc__tab-container acctab acctab'+i+' active">'+
+			'<div class="acc__tab">'+
+				'<div class="acc__ord">'+
+					'<div class="acc__ord-top">'+
+						'<div class="acc__ord-ord">Заказ №21234555</div>'+
+						'<div class="m-button sug__button">ПОВТОРИТЬ ЗАКАЗ</div>'+
+					'</div>'+
+				'</div>'+
+				'<div class="acc__ord-content">'+
+					'<div class="acc__ord-left">'+
+						'<div class="acc__ord-title">'+
+							'Состав заказа:'+
+						'</div>'+
+						'<div class="acc__ord-items">'+
+						'</div>'+
+					'</div>'+
+					'<div class="acc__ord-right">'+
+						'<div class="acc__ord-title">'+
+							'Данные доставки:'+
+						'</div>'+
+						'<div class="acc__ord-right-items">'+
+							'<div class="acc__ord-right-item">'+
+								'Контактное лицо: <span></span>'+
+							'</div>'+
+							'<div class="acc__ord-right-item">'+
+								'Контактный телефон: <span></span>'+
+							'</div>'+
+							'<div class="acc__ord-right-item">'+
+								'Адрес доставки: <span> Улица,'+
+										'д. 13, оф. 13</span>'+
+							'</div>'+
+							'<div class="acc__ord-right-item">'+
+									'Способ оплаты: <span></span>'+
+							'</div>'+
+							'<div class="acc__ord-right-item">'+
+								'Итоговая цена: <span></span>'+
+							'</div>'+
+							'<div class="acc__ord-right-item">'+
+								'Дата оформления: <span></span>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		'</div>'
 		)
 
 		$(".tab4").append(
-		+'<div class="acc__tab-container acctab acctab'+i+' active">'+
-+'			<div class="acc__tab">'+
-				+'<div class="acc__prods">'+
-				+'<div class="acc__prods-item">'+
-				+'<div class="acc__prods-close">'+
-+'<svg class="icon__close" width="20px" height="20px">'+
-+'<use xlink:href="#close"></use>'+
-+'</svg>'+
-				+'</div>'+
-				+'<div class="acc__prod">'+
-					+'<div class="prod__item">'+
-						+'<div class="prod__like like like-notactive">'+
-								+'<svg class="icon__like" width="20px" height="18px">'+
-									+'<use xlink:href="#like"></use>'+
-								+'</svg>'+
-						+'</div>'+
-+'						'+
-						+'<div class="prod__img-cont">'+
-							+'<a href="prod.html" class="prod__img m-bg-cont" style="background-image: url(&quot;/static/img/content/img-1.png&quot;);">'+
-								+'<img src="/static/img/content/img-1.png" alt="">'+
-							+'</a>'+
-						+'</div>'+
-						+'<div class="prod__title">'+
-							+'Буква на колесах в ассортименте 14,6 см 6 мм'+
-						+'</div>'+
-						+'<div class="prod__article">'+
-							+'Арктикул: 34578789'+
-						+'</div>'+
-						+'<div class="prod__desc">'+
-							+'Лучшие изделия, благодаря качественным материалам'+
-						+'</div>'+
-						+'<div class="prod__price">'+
-							+'<div class="prod__price-item">'+
-								+'<span>РОЗН:</span>'+
-								+'<div class="prod__price-new">'+
-									+'12500 руб.'+
-								+'</div>'+
-								+'<div class="prod__price-old">'+
-									+'2500 руб.'+
-								+'</div>'+
-							+'</div>'+
-							+'<div class="prod__price-item prod__price-item-2">'+
-								+'<span>РОЗН:</span>'+
-								+'<div class="prod__price-new">'+
-									+'от 2500 руб.'+
-								+'</div>'+
-								+'<div class="prod__price-old">'+
-									+'2500 руб.'+
-								+'</div>'+
-							+'</div>'+
-						+'</div>'+
-						+'<div class="prod__button">'+
-							+'<div class="m-button reverse callPopup basket-notactive data-id" data-popupblock="basket-popup" data-id="1">'+
-								+'<span>В КОРЗИНУ</span>'+
-								+'<div class="m-button__icon">'+
-+'									'+
-								+'<svg class="icon__basket" width="22px" height="22px">'+
-									+'<use xlink:href="#basket"></use>'+
-								+'</svg>'+
-+'							'+
-								+'</div>'+
-							+'</div>'+
-						+'</div>'+
-					+'</div>                                        '+
-					+'</div>'+
-+'			</div>'+
-				+'</div>'+
-+'				'+
-+'			</div>'+
-		+'</div>'
+		'<div class="acc__tab-container acctab acctab'+i+' active">'+
+'			<div class="acc__tab">'+
+				'<div class="acc__prods">'+
+				'<div class="acc__prods-item">'+
+				'<div class="acc__prods-close">'+
+'<svg class="icon__close" width="20px" height="20px">'+
+'<use xlink:href="#close"></use>'+
+'</svg>'+
+				'</div>'+
+				'<div class="acc__prod">'+
+					'<div class="prod__item">'+
+						'<div class="prod__like like like-notactive">'+
+								'<svg class="icon__like" width="20px" height="18px">'+
+									'<use xlink:href="#like"></use>'+
+								'</svg>'+
+						'</div>'+
+'						'+
+						'<div class="prod__img-cont">'+
+							'<a href="prod.html" class="prod__img m-bg-cont" style="background-image: url(&quot;/static/img/content/img-1.png&quot;);">'+
+								'<img src="/static/img/content/img-1.png" alt="">'+
+							'</a>'+
+						'</div>'+
+						'<div class="prod__title">'+
+							'Буква на колесах в ассортименте 14,6 см 6 мм'+
+						'</div>'+
+						'<div class="prod__article">'+
+							'Арктикул: 34578789'+
+						'</div>'+
+						'<div class="prod__desc">'+
+							'Лучшие изделия, благодаря качественным материалам'+
+						'</div>'+
+						'<div class="prod__price">'+
+							'<div class="prod__price-item">'+
+								'<span>РОЗН:</span>'+
+								'<div class="prod__price-new">'+
+									'12500 руб.'+
+								'</div>'+
+								'<div class="prod__price-old">'+
+									'2500 руб.'+
+								'</div>'+
+							'</div>'+
+							'<div class="prod__price-item prod__price-item-2">'+
+								'<span>РОЗН:</span>'+
+								'<div class="prod__price-new">'+
+									'от 2500 руб.'+
+								'</div>'+
+								'<div class="prod__price-old">'+
+									'2500 руб.'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="prod__button">'+
+							'<div class="m-button reverse callPopup basket-notactive data-id" data-popupblock="basket-popup" data-id="1">'+
+								'<span>В КОРЗИНУ</span>'+
+								'<div class="m-button__icon">'+
+'									'+
+								'<svg class="icon__basket" width="22px" height="22px">'+
+									'<use xlink:href="#basket"></use>'+
+								'</svg>'+
+'							'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+					'</div>                                        '+
+					'</div>'+
+'			</div>'+
+				'</div>'+
+'				'+
+'			</div>'+
+		'</div>'
 		)
 
 		$(".tab5").append(
-		+'<div class="acc__tab-container acctab acctab'+i+' active">'+
-		+'		<div class="acc__tab">'+
-		+'			<div class="acc__password">'+
-		+'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
-		+'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
-		+'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
-		+'			</div>'+
-+''+
-		+'			<div class="acc__information">'+
-		+'			<img src="/static/img/content/information.png" alt="">'+
-		+'				<span>Ваш пароль должен содержать не менее 8 символов <br>'+
-		+'						в том числе: по крайней мере 1 букву в верхнем регистре</span>'+
-		+'			</div>'+
-		+'			'+
-		+'		</div>'+
-		+'		<div class="acc__bottom-button">'+
-		+'			<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
-		+'		</div>'+
-		+'	</div>'
+		'<div class="acc__tab-container acctab acctab'+i+' active">'+
+		'		<div class="acc__tab">'+
+		'			<div class="acc__password">'+
+		'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
+		'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
+		'				<div class="m-field__container"><input type="password" name="[]" class="m-field" placeholder=""><div class="m-placeholder">Ваш старый пароль</div></div>'+
+		'			</div>'+
+''+
+		'			<div class="acc__information">'+
+		'			<img src="/static/img/content/information.png" alt="">'+
+		'				<span>Ваш пароль должен содержать не менее 8 символов <br>'+
+		'						в том числе: по крайней мере 1 букву в верхнем регистре</span>'+
+		'			</div>'+
+		'			'+
+		'		</div>'+
+		'		<div class="acc__bottom-button">'+
+		'			<a href="#" class="m-button sug__button">ИЗМЕНИТЬ</a>'+
+		'		</div>'+
+		'	</div>'
 		)
 
 			$(".option[data-value='acctab"+i+"']").trigger("click");
 		});
 	} 
-	
-
-	
-
-
-
-	 
 })
 
 $(document).ready(function() {
@@ -745,6 +761,8 @@ $(document).ready(function() {
 
          });
 	 });
+
+	 
     $('.reg-form').each(function() {
         var it = $(this);
          it.validate({

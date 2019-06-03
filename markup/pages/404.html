@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+</head>
+<body class="page">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="nf">
+        <div class="wrapper">
+            <div class="nf__container">
+                <div class="nf__404">
+                    <img src="%=static=%img/content/nf-img.png" alt="">
+                </div>
+                <div class="nf__title m-title-2">
+                    Извините, данная страница не существует
+                </div>
+                <div class="nf__desc">
+                    Попробуйте еще раз или начнит сначала
+                </div>
+                <div class="m-button">
+                    ОТПРАВИТЬ
+                    <div class="m-button__icon">
+                        {{Icon iconName="arrow"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer/footer}}
+    
+</body>
+</html>
