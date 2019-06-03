@@ -1,4 +1,4 @@
-<div class="overlay"></div>
+<div class="overlay visible"></div>
 
 
 <div class="trigger-basket-popup callPopup" data-popupBlock="basket-popup"></div>
@@ -15,6 +15,32 @@
             <button class="popupClose sug__button m-button">
                 закрыть
             </button>
+        </form>
+    </div>
+</div>
+
+
+<div class="trigger-popup-rev callPopup" data-popupBlock="popup-rev"></div>
+
+<div class="popup popup-rev visible">
+    <div class="popup__container">
+        <form action="" class="popup-content">
+            <div class="popup__close popupClose">
+                {{Icon iconName="close"}}   
+            </div>
+            <div class="m-title-3 mb20">
+                Оставьте отзыв
+            </div>
+            <form action="#">
+                <input class="m-field" type="text" name="name" placeholder="Имя">
+                <div class="mb10"></div>
+                <input class="m-field" type="text" name="name" placeholder="E-mail">
+                <div class="mb10"></div>
+                <textarea name="textarea" id="" cols="30" rows="10" class="m-textarea" placeholder="Текст сообщения"></textarea>
+                <button class="popupClose sug__button m-button">
+                    отправить
+                </button>
+            </form>
         </form>
     </div>
 </div>

@@ -4576,6 +4576,24 @@ a {
     }
 }
 
+.popup-rev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .m-field__container {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        input {
+            width: 100%;    
+        }
+    }
+    textarea {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
 
 .nf {
     &__container {
