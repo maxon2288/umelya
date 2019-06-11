@@ -4,9 +4,6 @@ function popup() {
         $('.popup, .overlay, .popup__container, .nav-container').removeClass('visible');
     });
 
-    // $(".popup__container >").click(function() {
-    //     $('.popup').removeClass("visible");
-    // });
 
     $(".form-reset").click(function() {
         $(this).closest('form').find('input').val('');
@@ -19,20 +16,12 @@ function popup() {
         }
     });
 
-    // if ($(".popup").hasClass('visible')) {
-    //     $(".popup__container").addClass('visible');
-    // } else {
-    //     $(".popup__container").removeClass('visible');
-    // }        
 
     $(".callPopup").on('click', function (event) {
         event.preventDefault();
+        $('body').css('overflow', 'auto');
+        $('.popup, .overlay, .popup__container, .nav-container').removeClass('visible');
         var popup = $(this).attr('data-popupBlock');
-        // if ($('.' + popup).hasClass('popup--notfixed')) {
-        //     $('.' + popup).scroll(function () {
-        //         $('.' + popup).css('top', $(window).scrollTop()+ "px");
-        //     });
-        // };
         $('body').css('overflow', 'hidden');
         $('.overlay').addClass('visible');
         $('.' + popup).addClass('visible');

@@ -1,4 +1,4 @@
-<div class="overlay visible"></div>
+<div class="overlay"></div>
 
 
 <div class="trigger-basket-popup callPopup" data-popupBlock="basket-popup"></div>
@@ -6,9 +6,6 @@
 <div class="popup basket-popup">
     <div class="popup__container">
         <form action="" class="popup-content">
-            <!-- <div class="popup__close popupClose">
-                {{Icon iconName="close"}}   
-            </div> -->
             <div class="m-title-3">
                 Товар добавлен в корзину
             </div>
@@ -20,28 +17,44 @@
 </div>
 
 
+<div class="trigger-thanx-rev callPopup" data-popupBlock="thanx-rev"></div>
+
+<div class="popup thanx-rev">
+    <div class="popup__container">
+        <form action="#" class="popup-content">j
+            <div class="popup__close popupClose">
+                {{Icon iconName="close"}}   
+            </div>
+            <div class="m-title-3">
+                Спасибо за оставленный отзыв!
+            </div>
+            
+        </form>
+    </div>
+</div>
+
 <div class="trigger-popup-rev callPopup" data-popupBlock="popup-rev"></div>
 
-<div class="popup popup-rev visible">
+<div class="popup popup-rev">
     <div class="popup__container">
-        <form action="" class="popup-content">
+        <div class="popup-content">
             <div class="popup__close popupClose">
                 {{Icon iconName="close"}}   
             </div>
             <div class="m-title-3 mb20">
                 Оставьте отзыв
             </div>
-            <form action="#">
+            <form action="#" class="popup-rev-form">
                 <input class="m-field" type="text" name="name" placeholder="Имя">
                 <div class="mb10"></div>
-                <input class="m-field" type="text" name="name" placeholder="E-mail">
+                <input class="m-field" type="text" name="email" placeholder="E-mail">
                 <div class="mb10"></div>
                 <textarea name="textarea" id="" cols="30" rows="10" class="m-textarea" placeholder="Текст сообщения"></textarea>
-                <button class="popupClose sug__button m-button">
+                <button class="sug__button m-button">
                     отправить
                 </button>
             </form>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -64,7 +77,7 @@
 
 
 
-<div class="trigger-basket-delete callPopup" data-popupBlock="basket-delete"></div>
+<div class="trigger-popup-thanx callPopup" data-popupBlock="basket-delete"></div>
 
 <div class="popup popup-thanx">
     <div class="popup__container">

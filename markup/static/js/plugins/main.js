@@ -170,14 +170,6 @@ $(document).ready(function () {
 	});
 
 
-	$(".like-notactive").click(function() {
-		
-	});
-	$(".like-active").click(function() {
-		
-
-	});
-
 	$(document).on("click", ".like-active", function() {
 		$(this).addClass("like-notactive");
 		$(this).removeClass("like-active");
@@ -759,9 +751,56 @@ $(document).ready(function() {
 			errorPlacement: function (error, element) {
 			},
 
+			submitHandler: function() {
+                // console.log(1)
+                // $(".form input, .form textarea").val('');
+                $.ajax({
+                    // type: 'POST',
+                    // url: 'mail.php',
+                    success: function(){
+                        console.log("fdsfdsa");
+                    }
+                });
+            },  
+
          });
 	 });
+    $('.popup-rev-form').each(function() {
+        var it = $(this);
+         it.validate({
+			rules: {
+                name: {
+                    required: true,
+                },
+                phone: {
+                    required: true,
+                    maxlength: 17,
+                    minlength: 17,
+                },
+                email: {
+                    required: true,
+                    email: true,
+				},
+				textarea: {
+					required: true,
+				}
+			},
 
+			errorPlacement: function (error, element) {
+			},
+
+			submitHandler: function() {
+				
+				$.ajax({
+					success: function(){
+						$(".popupClose").trigger("click");
+						$(".trigger-thanx-rev").trigger("click");
+                    }
+                });
+            },  
+
+         });
+	 });
 	 
     $('.reg-form').each(function() {
         var it = $(this);

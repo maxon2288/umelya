@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+    <!-- Put this script tag to the <head> of your page -->
+</head>
+<body class="page">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="fp">
+        <div class="wrapper">
+            <div class="fp__container">
+                <form action="#" class="fp__form">
+                    <div class="m-title">
+                        Восстановление пароля
+                    </div>
+                    <input type="text" class="m-field" name="email" placeholder="Ваш E-mail">
+                    <button class="m-button">отправить<div class="m-button__icon">{{Icon iconName="arrow"}}</div></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{> footer/footer}}
+    
+</body>
+</html>
