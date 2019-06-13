@@ -3209,7 +3209,14 @@ a {
         }
     }
 }
-
+.search-result {
+    color: #404040;
+    font-size: 20px;
+    span {
+        color: $blue;
+        font-weight: bold;
+    }
+}
 .like-button {
     height: 50px;
     min-width: 50px;
@@ -4062,26 +4069,58 @@ a {
         }
     }
     &__item {
-        background-color: #fff;
-        border-radius: 25px;
+        
         padding: 30px 20px;
         color: $blue;
         font-weight: bold;
         font-size: 16;
         span {
             color: $orange;
+            position: relative;
+        }
+        cursor: pointer;
+        &:hover {
+            .acc-check {
+                background-color: #f3f3f3;
+            }
+        }
+        position: relative;
+        z-index: 1;
+        .acc-check {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 25px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.3s;   
+        }
+        input {
+            display: none;
+            &:checked {
+                & ~ .acc-check {
+                    background-color: #e4e4e4;
+                }
+            }
         }
     }
     &-field__container {
         margin-bottom: 20px;
         margin-right: 20px;
-        width: calc(33% - 20px);
+        width: calc(50% - 20px);
+        justify-content: flex-end;
         @media screen and (max-width: 1024px) {
-            width: сфдс(50% -20px)
+            width: calc(50% -20px);
         }
         @media screen and (max-width: 767px) {
             width: 100%;
             margin-right: 0;
+        }
+        .acc-field {
+            width: auto;
+            flex-grow: 1;
         }
     }
     &__fields {
@@ -4131,14 +4170,12 @@ a {
         display: flex;
         flex-wrap: wrap;
         .acc-field__container {
-            max-width: 500px;
             width: 100%;
         }
         .acc-field__container, .m-field__container {
             margin-bottom: 30px;
         }
         .m-field__container {
-            max-width: 300px;
             width: 100%;
             input {
                 width: 100%;
@@ -4327,21 +4364,19 @@ a {
         margin-right: 35px;
     }
     &__password {
-        display: grid;
         grid-gap: 20px;
-        grid-template-columns: repeat(3, 1fr);
-        -ms-grid-columns: 1fr 1fr 1fr; 
+        display: flex;
+        justify-content: space-between;
         .m-field__container {
-            max-width: 100%;
             min-width: 0;
-            width: 100%;
+            width: calc(33% - 20px);
+            margin-right: 20px;
             input {
                 width: 100%;
             }
-        }
-        @media screen and (max-width: 767px) {
-            grid-template-columns: repeat(1, 1fr);  
-            -ms-grid-columns: 1fr ;
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
         }
     }
     &__information {
@@ -4597,5 +4632,41 @@ a {
         width: 240px;
         min-width: 240px;
         max-width: 240px;
+    }
+}
+
+.acc-add {
+    position: relative;
+    &:hover {
+        .acc-add__sub {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    }
+    &__sub {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        top: 100%;
+        background-color: #fff;
+        z-index: 10;
+        left: 50%;
+        transform: translate(-50%);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        opacity: 0;
+        transition: 0.3s;
+        visibility: hidden;
+        a {
+            display: flex;
+
+            padding: 10px 20px ;
+            &:first-child {
+                border-bottom: 1px solid #ccc;
+            }
+            &:hover {
+                background-color: #f4f4f4;
+            }
+        }
     }
 }

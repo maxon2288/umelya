@@ -18,7 +18,7 @@
         </div>
     </div>
     
-    <div class="acc">
+    <div class="acc acc-yr">
         <div class="wrapper tabs__container-1">
             <div class="acc__top tabs__tabs">
                 <a href="tab1" class="m-button-2 tabs__tab">ВАШИ ДАННЫЕ</a>
@@ -37,6 +37,10 @@
                         </select>
                         <div class="acc__button acc-add">
                             {{Icon iconName="plus"}}
+                            <div class="acc-add__sub">
+                                <a href="#">Физическое лицо</a>
+                                <a href="#">Юридическое лицо</a>
+                            </div>
                         </div>
                     </div>
                     
@@ -83,27 +87,38 @@
                                         <input type="text" name="name" class="m-field" placeholder="Адрес доставки">                            
                                     </div>
                                     <div class="acc__deliv-button">
-                                        + Добавить адрес доставки
+                                        Добавить адрес доставки
                                     </div>
                                 </div>
         
         
                                 <div class="acc__items">
-                                    <div class="acc__item">
+                                    <label class="acc__item">
+                                        <input type="radio" name="radio1" checked>
+                                        <div class="acc-check"></div>
                                             Оплата заказа непосредственно <span>в офисе компании</span>, при получении заказа
-                                    </div>
-                                    <div class="acc__item">
+                                    </label>
+                                    <label class="acc__item">
+                                        <input type="radio" name="radio1">
+                                        <div class="acc-check"></div>
+
                                             Оплата заказа <span>курьеру</span>, при получении заказа
-                                    </div>
-                                    <div class="acc__item">
+                                    </label>
+                                    <label class="acc__item">
+                                        <input type="radio" name="radio1">
+                                        <div class="acc-check"></div>
+
                                             Оплата от физического лица <span>
                                                     на карту
                                                     Сбербанка
                                             </span>
-                                    </div>
-                                    <div class="acc__item">
+                                    </label>
+                                    <label class="acc__item">
+                                        <input type="radio" name="radio1">
+                                        <div class="acc-check"></div>
+
                                             Оплата через <span>Яндекс.Кассу </span>
-                                    </div>
+                                    </label>
                                 </div>
                                 
                             </div>
