@@ -2,14 +2,17 @@
 $(document).ready(function () {
 	popup ();
 	M.AutoInit();
-	// forms();
+
+	$(".html img").each(function() {
+		$(this).wrap("<figure></figure>");
+	});
 
 	var swiper = new Swiper('.first__slider', {
 		spaceBetween: 10,
 		speed: 1300,
 		slidesPerView: 1,
 		parallax: true,
-		// grabCursor: true,
+		
 		clicable: false,
 		autoplay: {
 			delay: 5000,
@@ -32,6 +35,11 @@ $(document).ready(function () {
 			it.wrap("<div class='m-field__container'></div>");
 			it.closest(".m-field__container").append("<div class='m-placeholder'>"+placeholder+"</div>")
 			it.attr("placeholder", '')
+			if ($(this).val().length > 0) {
+				$(this).addClass("is-focus");
+			} else {
+				$(this).removeClass("is-focus");
+			}
 		});
 	
 		$(".m-field, .m-field-2").change(function() {
@@ -41,6 +49,7 @@ $(document).ready(function () {
 				$(this).removeClass("is-focus");
 			}
 		});	
+		
 	}
 	fields();
 
@@ -58,9 +67,7 @@ $(document).ready(function () {
 		'</div>')
 	});	
 
-	$(".html img").each(function() {
-		$(this).wrap("<figure></figure>");
-	});
+	
 	var swiper = new Swiper('.first-min-slider', {
 		spaceBetween: 10,
 		speed: 1300,
@@ -79,7 +86,6 @@ $(document).ready(function () {
 	});
 	
 
-	//tabs------------
 	$(".tabs__container").each(function() {
 		$('.tabs__tab').click(function(e) {
 			e.preventDefault();
@@ -313,10 +319,10 @@ $(document).ready(function () {
 
 	});
 	
-	$(document).click(function (e){ // событие клика по веб-документу
-		var div = $(".header__features"); // тут указываем ID элемента
-		if (!div.is(e.target) // если клик был не по нашему блоку
-			&& div.has(e.target).length === 0) { // и не по его дочерним элементам
+	$(document).click(function (e){ 
+		var div = $(".header__features"); 
+		if (!div.is(e.target) 
+			&& div.has(e.target).length === 0) { 
 				$(".header__search").removeClass("visible");	
 				$(".header__menu, .header__phone").removeClass("invisible")
 		}
@@ -393,53 +399,35 @@ $(document).ready(function () {
 		},
 	});
 
-	const controls = '<div class="plyr__controls play">'+'    <button type="button" class="play__button" data-plyr="play">'+'	<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">'+'	<path d="M13.7096 8.64707L1.20701 0.0754375C1.07465 -0.0149932 0.903067 -0.024422 0.761658 0.0488654C0.619818 0.12301 0.531006 0.268728 0.531006 0.42816V17.5714C0.531006 17.7309 0.619818 17.877 0.761658 17.9511C0.824602 17.9837 0.893582 18 0.962131 18C1.04792 18 1.13329 17.9743 1.20701 17.9241L13.7096 9.35252C13.8265 9.27237 13.8959 9.1408 13.8959 8.99979C13.8959 8.85879 13.826 8.72722 13.7096 8.64707Z" fill="#1963AE"/>'+'	</svg>	'+'    </button>	'+'	<div class="play__text play__time plyr__time--current" aria-label="Current time">00:00</div>'+'	<div class="play__text plyr__time--duration" aria-label="Duration">00:00</div>'+'	<div class="plyr__progress">'+'        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">'+'        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>'+'        <span role="tooltip" class="plyr__tooltip">00:00</span>'+'    </div>'+'    <button type="button" class="plyr__control play__mute" aria-label="Mute" data-plyr="mute">'+'	<svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>'+'	<svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>'+'	<span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>'+'	<span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>'+'    </button>'+'	</div>';
-
-console.log(controls);
-
-if ($(window).width() <= 1023) {
-	var swiper = new Swiper('.first__bottom', {
-		speed: 400,
-		slidesPerView: 2,
-		spaceBetween: 43,
-		autoplay: {
-			delay: 2500,
-		},
-		navigation: {
-			nextEl: '.reason-next',
-			prevEl: '.reason-prev',
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets',
-		},
-		breakpoints: {
-			767: {
-				slidesPerView: 1,
-			},
-		},
-	});
-}
 	
-// Setup the player
-// const player = new Plyr('#player', { controls });
 
-	$(".js-player-instance").each(function() {
+	if ($(window).width() <= 1023) {
+		var swiper = new Swiper('.first__bottom', {
+			speed: 400,
+			slidesPerView: 2,
+			spaceBetween: 43,
+			autoplay: {
+				delay: 2500,
+			},
+			navigation: {
+				nextEl: '.reason-next',
+				prevEl: '.reason-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
+			},
+			breakpoints: {
+				767: {
+					slidesPerView: 1,
+				},
+			},
+		});	
+		var mobileMenu = $(".header__menu").html();
+		$('.header__mobile-menu').append(mobileMenu);
+		$(".header__menu").remove();
+	}
 
-		var source = $(this).attr('data-source');
-		
-		const player = new Plyr('.js-player-instance', {
-			autoplay: false,
-			controls: controls,
-		});
-		player.source = {
-			type: 'audio',
-			sources: [{
-					src: source,
-					type: 'audio/mp3'
-				}]
-		};
-	});
 
 	$(".m-table, .html table").each(function() {
 		$(this).wrap("<div class='m-table__container'></div>")
@@ -451,6 +439,37 @@ if ($(window).width() <= 1023) {
 	});
 
 	$('.main-select').niceSelect();
+	$(".addres-select option").each(function() {
+		console.log(1111);
+		var addres1 = $(this).attr("data-addres")
+		var city1 = $(this).attr("data-city")
+		var i = $(this).index() + 1;
+		$(".nice-select.addres-select .option:nth-child("+ i +")").attr("data-addres", addres1);
+		$(".nice-select.addres-select .option:nth-child("+ i +")").attr("data-city", city1);
+		$(".select-city").val(city1)
+		$(".select-addres").val(addres1)
+		$(".m-field, .m-field-2").each(function() {
+			if ($(this).val().length > 0) {
+				$(this).addClass("is-focus");
+			} else {
+				$(this).removeClass("is-focus");
+			}
+		});	
+	});
+
+	$(".nice-select.addres-select .option").click(function() {
+		var addres = $(this).attr("data-addres");
+		var city = $(this).attr("data-city");
+		$(".select-city").val(city)
+		$(".select-addres").val(addres)
+		$(".m-field, .m-field-2").each(function() {
+			if ($(this).val().length > 0) {
+				$(this).addClass("is-focus");
+			} else {
+				$(this).removeClass("is-focus");
+			}
+		});	
+	});
 
 	$(".m-bg-cont").each(function() {
 		var img = $(this).find("img").attr("src");
@@ -460,26 +479,25 @@ if ($(window).width() <= 1023) {
 	$('.number-input-container').each(function() {
 		var it = $(this);
 		it.find(".number-increment").click(function(e) {
-		   let $input = $(this).siblings('.number-input'),
+		   var $input = $(this).siblings('.number-input'),
 			   val = parseInt($input.val()),
 			   max = parseInt($input.attr('max')),
 			   step = parseInt($input.attr('step'));
-		   let temp = val + step;
+		   var temp = val + step;
 		   $input.val(temp <= max ? temp : max);
 		   it.find(".number-result").text($input.val());
 	   });
 	   it.find(".number-decrement").click(function(e) {
 
-		   let $input = $(this).siblings('.number-input'),
+		   var $input = $(this).siblings('.number-input'),
 			   val = parseInt($input.val()),
 			   min = parseInt($input.attr('min')),
 			   step = parseInt($input.attr('step'));
-		   let temp = val - step;
+		   var temp = val - step;
 		   $input.val(temp >= min ? temp : min);
 		   it.find(".number-result").text($input.val());
 	   });
 	})
-
 
 	$(".pr__thumb").mouseenter(function() {
 		var index = +$(this).index();
@@ -496,9 +514,6 @@ if ($(window).width() <= 1023) {
 		console.log(tab);
 		$("." + tab).addClass('active');
 	});
-
-
-	
 })
 
 $(document).ready(function() {
@@ -524,11 +539,11 @@ $(document).ready(function() {
 			},
 
 			submitHandler: function() {
-                // console.log(1)
-                // $(".form input, .form textarea").val('');
+                
+                
                 $.ajax({
-                    // type: 'POST',
-                    // url: 'mail.php',
+                    
+                    
                     success: function(){
                         console.log("fdsfdsa");
                     }
@@ -617,7 +632,7 @@ $(document).ready(function() {
                     required: true,
                     email: true,
                 },
-                massage: {
+                massage: {	
                     required: true,
                 }
 			},
@@ -656,29 +671,26 @@ $(document).ready(function() {
 
          });
 	 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	 
-	 
-	 
-	 
+
+	 var controls = '<div class="plyr__controls play">    <button type="button" class="play__button" data-plyr="play">	<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">	<path d="M13.7096 8.64707L1.20701 0.0754375C1.07465 -0.0149932 0.903067 -0.024422 0.761658 0.0488654C0.619818 0.12301 0.531006 0.268728 0.531006 0.42816V17.5714C0.531006 17.7309 0.619818 17.877 0.761658 17.9511C0.824602 17.9837 0.893582 18 0.962131 18C1.04792 18 1.13329 17.9743 1.20701 17.9241L13.7096 9.35252C13.8265 9.27237 13.8959 9.1408 13.8959 8.99979C13.8959 8.85879 13.826 8.72722 13.7096 8.64707Z" fill="#1963AE"/>	</svg>	    </button>		<div class="play__text play__time plyr__time--current" aria-label="Current time">00:00</div>	<div class="play__text plyr__time--duration" aria-label="Duration">00:00</div>	<div class="plyr__progress">        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>        <span role="tooltip" class="plyr__tooltip">00:00</span>    </div>    <button type="button" class="plyr__control play__mute" aria-label="Mute" data-plyr="mute">	<svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>	<svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>	<span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>	<span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>    </button>	</div>';
+ 
+	$(".js-player-instance").each(function() {
+
+		var source = $(this).attr('data-source');
+		
+		const player = new Plyr('.js-player-instance', {
+			autoplay: false,
+			controls: controls,
+		});
+		player.source = {
+			type: 'audio',
+			sources: [{
+					src: source,
+					type: 'audio/mp3'
+				}]
+		};
+	});
+
 	 
 });

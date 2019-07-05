@@ -252,6 +252,12 @@
             right: calc(100% - 45px);
         }
     }
+    &:before {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
     &:hover {
         background-color: #e45711;
     }
@@ -389,9 +395,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     vertical-align: top;
-    height: 110px !important;
+    min-height: 110px !important;
     font-size: 14px;
     line-height: normal;
+    max-height: 170px;
+    max-width: 100%;
     color: #B2C2CD;
     &::placeholder {
         transition: 0.3s;

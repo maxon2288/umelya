@@ -4,7 +4,7 @@
 
 <div class="trigger-basket-popup callPopup" data-popupBlock="basket-popup"></div>
 
-<div class="popup basket-popup">
+<div class="popup basket-popup">        
     <div class="popup__container">
         <form action="" class="popup-content">
             <div class="m-title-3">
@@ -22,7 +22,7 @@
 
 <div class="popup thanx-rev">
     <div class="popup__container">
-        <form action="#" class="popup-content">j
+        <form action="#" class="popup-content">
             <div class="popup__close popupClose">
                 {{Icon iconName="close"}}   
             </div>
@@ -45,12 +45,45 @@
             <div class="m-title-3 mb20">
                 Оставьте отзыв
             </div>
-            <form action="#" class="popup-rev-form">
+            <form action="#" class="popup-rev-form ">
                 <input class="m-field" type="text" name="name" placeholder="Имя">
                 <div class="mb10"></div>
                 <input class="m-field" type="text" name="email" placeholder="E-mail">
                 <div class="mb10"></div>
                 <textarea name="textarea" id="" cols="30" rows="10" class="m-textarea" placeholder="Текст сообщения"></textarea>
+                <button class="sug__button m-button">
+                    отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="trigger-oneclick callPopup" data-popupBlock="oneclick"></div>
+
+<div class="popup oneclick">
+    <div class="popup__container">
+        <div class="popup-content">
+            <div class="popup__close popupClose">
+                {{Icon iconName="close"}}   
+            </div>
+            <div class="m-title-3 mb20">
+                Купить в 1 клик
+            </div>
+
+            <div class="oneclick__content">
+                <div class="oneclick__item">
+                    <div class="oneclick__text">название</div>
+                    <div class="oneclick__bold">lorelore</div>
+                </div>
+                <div class="oneclick__item">
+                    <div class="oneclick__text">название</div>
+                    <div class="oneclick__bold">lorelore</div>
+                </div>
+            </div>
+            
+            <form action="#" class=" oneclick-form">
+                <input class="m-field phone-mask" type="text" name="phone" placeholder="Номер телефона">
                 <button class="sug__button m-button">
                     отправить
                 </button>
